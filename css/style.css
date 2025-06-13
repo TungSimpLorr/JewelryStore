@@ -1,0 +1,385 @@
+*
+{
+    box-sizing: border-box;
+    margin : 0 ;
+    padding : 0;
+}
+html
+{
+    font-size: 16px;
+}
+.container
+{
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(176, 176, 176);
+}
+ul
+{
+    list-style-type: none;
+}
+/* ------responsive---- */
+@media only screen and ( max-width: 600px )
+{
+.menu-bar  nav  ul  
+{
+    display: none;
+}
+}
+/* -------header---------- */
+header
+{
+    width: 100%;
+    height:auto;
+    background-color: green;
+}
+.topbar
+{
+    width:100%;
+    height: 30px;
+    background-color: rgb(75, 75, 75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topbar p 
+{
+    font-size: 1rem;
+    font-family :'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(165, 165, 165);
+}
+
+.menu-bar
+{
+    width: 100%;
+    height : 60px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.menu-bar > nav > ul 
+{
+    display: flex;
+    list-style-type: none ;
+}
+nav ul  li
+{
+    padding: 10px 20px;
+}
+nav  ul  li  a
+{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+}
+#cart-bar-icon
+{
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 10px;
+    
+}
+#cart-bar-icon:hover
+{
+    color: rgb(176, 176, 176);
+    font-size: 1.5rem;
+    padding: 0 10px;
+    
+}
+#cart-shopping-icon
+{
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 10px;
+    
+}
+
+#cart-search-icon
+{
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 10px;
+    
+}
+#cart-user-icon
+{
+    color: white;
+    font-size: 1.1rem;
+    padding: 0 10px;
+    
+}
+#cart-list-icon
+{
+    color: rgb(40, 39, 39);
+    font-size: 20px;
+    padding: 0 10px;
+}
+.icon
+{
+     color: rgb(40, 39, 39);
+    font-size: 20px;
+    padding: 0 10px;
+
+}
+.box-icon
+{
+    padding-left: 5%;
+    width: 20%;
+   
+}
+.box-icon > a
+{
+    padding-right: 5%;
+}
+
+.search-box
+{
+    width:20%;
+    height : 60px;
+    display: flex;
+    float: right;
+    align-items: center;
+    justify-content: center;
+    
+}
+input
+{
+    width:70%;
+    height : 50px;
+    border : none ;
+    outline: none;
+    background-color: rgb(214, 214, 214);
+}
+input[type="text"] , ::placeholder
+{
+    padding: 5px;
+    color: rgb(109, 109, 109);
+}
+#search
+{
+    width:20%;
+    height : 50px;
+    margin-left: 0 ;
+    border: none;
+    background-color: rgb(163, 163, 163);
+    color: rgb(67, 67, 67);
+}
+#search:hover
+{
+     background-color: rgb(0, 0, 0);
+    color: rgb(149, 149, 149);
+}
+
+main
+{
+    width:100%;
+    height : auto ;
+    background-color: aquamarine;
+}
+
+.box-banner
+{
+    background-image: url('../images/banner/anh-banner-1.png');
+    width: 100%;
+    height : 650px;
+    background-size: cover;
+}
+
+.box-content-banner
+{
+    background-color: brown;
+    width: 50%;
+    height :auto ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-banner 
+{   
+    color: white;
+    font-size: 2rem;
+    line-height: 1.5;
+}
+.content-banner h3{
+    font-size:  1.5rem;
+}
+
+.boxcenter
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.sidebar
+{   display: none;
+    width: 20%;
+    height: 650px;
+    background-color: rgb(181, 178, 178);
+}
+.sidebar nav ul li a 
+{
+    color: black;
+    font-size: 1.5rem;
+}
+.sidebar > nav > ul > li 
+{
+    line-height: 1.5;
+  
+}
+.sidebar > nav > ul > li :hover
+{
+    color: white;
+    font-size: 1.6rem;
+}
+
+.box-content-introduce
+{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height : auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+   
+}
+.text-introduce
+{   padding: 50px 50px 50px 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    color:rgb(0, 0, 0);
+    text-align: center;
+    line-height:2;
+   
+    
+}
+.text-introduce > p
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* -----------footer------ */
+
+footer 
+{
+   
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height : 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer-top
+{
+    
+    display: flex;
+    background-color: rgb(0, 0, 0);
+    height:250px;
+    flex-direction: column;
+}
+.footer-under
+{
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    column-gap: 100px;
+    justify-content: center;
+   
+}
+.footer-top > h2
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
+    color:white;
+    text-align: center;
+    padding-top: 20px;
+    justify-items: center;
+    
+}
+.box-input-footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.box-input-footer > input
+{   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 400px;
+    height: 40px;
+    background-color: rgb(41, 39, 39);
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: 1em;
+    color:rgb(223, 223, 223)
+}
+.footer-icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 30px;
+    
+}
+.footer-icon > i
+{
+    color: white;
+    padding: 0 10px;
+    font-size: 20px;
+}
+.text-footer
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    color:white;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.text-footer > p
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    color:white;
+    line-height: 2;
+    padding-top: 20px;
+   
+}
+/* icon  */
+.box-social-icon
+{
+    padding: 0 auto ;
+    text-align:left;
+}
+.cart-fb-icon
+{
+   font-size: 25px;
+   
+}
+.cart-yt-icon 
+{
+    font-size: 25px;
+}
+.cart-gg-icon
+{
+    font-size: 25px;
+
+}
+.cart-tt-icon
+{
+    font-size: 25px;
+
+}
