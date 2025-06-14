@@ -11,7 +11,25 @@ $(document).ready(function(){
     $('#product-option').click(function(){
         $('.productbar').slideToggle(300);
     });
+    
+     $(".product-type-list").owlCarousel({
+      items: 4, 
+      loop: true, 
+      margin: 10, 
+      dots: true, 
+      autoplay: true,
+      autoplayTimeout: 2000,
+      autoplayHoverPause: true
+    });
 
+     $(".img-banner").owlCarousel({
+      items: 1, 
+      loop: true, 
+      dots: true, 
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true
+    });
 
 });
 
@@ -30,16 +48,6 @@ function hiensidebar()
 
     };
 
-    function changebanner() {
-    const banner = document.getElementsByClassName('box-banner')[0];
-    const sidebar = document.getElementsByClassName('sidebar')[0];
-    sidebarnow = sidebar.style.display;
+ 
 
-    if (sidebarnow) {
-        if (sidebarnow.style.display === 'none') {
-            banner.style.width = '100%';
-        } else {
-            banner.style.width = '70%';
-        }
-    }
-}
+

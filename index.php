@@ -8,6 +8,9 @@
     <script src="https://kit.fontawesome.com/3a3ccaffa9.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 </head>
 <body>
      <div class="container">
@@ -37,11 +40,17 @@
             </nav>
 
            </div> 
-        <div class="box-banner">
+            <div class="box-banner">
              <div class="search-box">
                <input type="text" placeholder="Bạn đang tìm gì...">
-             <button id="search">Search</button>
-            </div>
+                <button id="search">Search</button>
+                </div>
+             <div class="img-banner owl-carousel">
+                    <img  src="images/banner/anh-banner-1.png" alt="banner">
+                    <img  src="images/banner/anh-banner-2.png" alt="banner">
+                    <img  src="images/banner/anh-banner-3.png" alt="banner">
+             </div>
+        
             <!-- <div class="box-content-banner content-banner">
                 <div class="content-banner">
                     <h2>Mua sắm tại Jewelry Store</h2>
@@ -59,8 +68,19 @@
                 tự tin thể hiện cá tính và phong cách riêng của mình.
                 <br />
                 <p>Khám phá những sản phẩm bán chạy nhất hiện tại của chúng tôi </p>
-
             </div>
+
+
+            <div class="mg title"><h2>DANH MỤC SẢN PHẨM</h2></div> 
+            <div class="box">
+        <div class="product-type-list owl-carousel">
+            <div class="item"><img src="images/products/anh-danh-muc-san-pham-1.PNG"><h3>NHẨN   </h3></div>
+            <div class="item"><img src="images/products/anh-danh-muc-san-pham-2.PNG"><h3>VÒNG TAY       </h3></div>
+            <div class="item"><img src="images/products/anh-danh-muc-san-pham-3.PNG"><h3>ĐỒNG HỒ </h3></div>
+            <div class="item"><img src="images/products/anh-danh-muc-san-pham-4.PNG"><h3>DÂY CHUYỀN/VÒNG CỔ</h3></div>
+            <div class="item"><img src="images/products/anh-danh-muc-san-pham-5.PNG"><h3>KHUYÊN TAI </h3></div>
+             </div>
+        </div>
     </main>
 
      </div>
