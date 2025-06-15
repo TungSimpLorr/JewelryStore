@@ -59,10 +59,10 @@ CREATE TABLE IF NOT EXISTS bai_viet (
     tieu_de VARCHAR(255) NOT NULL,
     noi_dung TEXT NOT NULL,
     ngay_tao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ma_nguoi_dung INT NOT NULL,
+    ma_admin INT NOT NULL,
     ma_danh_muc INT NOT NULL,
     trang_thai ENUM('draft', 'published', 'archived') DEFAULT 'draft',
-    FOREIGN KEY (ma_nguoi_dung) REFERENCES nguoi_dung(id) ON DELETE CASCADE,
+    FOREIGN KEY (ma_admin) REFERENCES admin(id) ON DELETE CASCADE,
     FOREIGN KEY (ma_danh_muc) REFERENCES danh_muc_bai_viet(id) ON DELETE RESTRICT
 );
 
