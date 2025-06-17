@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include '../includes/connect.php';
-include '../includes/header.php';
+include "../includes/connect.php";
+include "../includes/header.php";
 
 // HÀM CHUYỂN TIÊU ĐỀ THÀNH TÊN FILE ẢNH
 function convertToSlug($str) {
@@ -43,7 +43,7 @@ $total_pages = ceil($total_posts / $limit);
 // Lấy bài viết + tên người viết
 $sql = "SELECT bv.id, bv.tieu_de, bv.noi_dung, bv.ngay_tao, qtv.ten_quan_tri_vien
         FROM bai_viet bv
-        LEFT JOIN quan_tri_vien qtv ON bv.ma_admin = qtv.id_quan_tri_vien
+        LEFT JOIN quan_tri_vien qtv ON bv.id_quan_tri_vien = qtv.id_quan_tri_vien
         ORDER BY bv.ngay_tao DESC
         LIMIT ? OFFSET ?";
 $stmt = $conn->prepare($sql);
@@ -52,7 +52,10 @@ $stmt->execute();
 $result = $stmt->get_result();
 ?>
 
-<link rel="stylesheet" href="/JewelryStore/css/style.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/blogs.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <div class="content">
     <div class="blog-grid">
@@ -96,4 +99,4 @@ $result = $stmt->get_result();
     </div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php include "../includes/footer.php"; ?>
