@@ -41,10 +41,10 @@
 
            </div> 
             <div class="box-banner">
-             <div class="search-box">
-               <input type="text" placeholder="Bạn đang tìm gì...">
-                <button id="search">Search</button>
-                </div>
+                 <div class="search-box">
+            <input type="text" placeholder="Bạn đang tìm gì...">
+            <button id="search">Search</button>
+        </div>
              <div class="img-banner owl-carousel">
                     <img  src="images/banner/anh-banner-1.png" alt="banner">
                     <img  src="images/banner/anh-banner-2.png" alt="banner">

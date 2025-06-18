@@ -1,5 +1,5 @@
 
-    <header>
+        <header>
         <div class="topbar">
                 <p>Mua sắm trực tuyến tại Jewelry Store - Liên hệ : 0123456789</p>
             </div>
@@ -20,6 +20,10 @@
                        <a href="#"> <i class="fa-solid fa-cart-shopping " id="cart-shopping-icon"></i></a>
                        <a href="#"> <i class="fa-solid fa-circle-user" id="cart-user-icon"></i></a>
         </div>
+     
+        
+      
         </div>
+        
     </header>
       

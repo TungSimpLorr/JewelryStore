@@ -1,14 +1,12 @@
-
 $(document).ready(function(){
-
     $('.search-box').hide();
     $('#cart-search-icon').click(function(){
-         $('.search-box').slideToggle(300);
-
+        $('.search-box').slideToggle(300);
     });
-
+    
     $('.productbar').hide();
-    $('#product-option').click(function(){
+    $('#product-option').click(function(e){
+        e.preventDefault(); 
         $('.productbar').slideToggle(300);
     });
     

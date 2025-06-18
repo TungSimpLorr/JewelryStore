@@ -1,4 +1,5 @@
- <footer>
+
+     <footer>
             <div class="footer-top">
                 <h2>Stay up to date with our exclusive offers<br />and new products</h2>
                 <div class="box-input-footer"><input type="text" placeholder="Nhap Email cua ban ..."></div>
