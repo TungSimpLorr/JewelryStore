@@ -35,6 +35,7 @@
                 </li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping icon " style="color: black";></i>Giỏ hàng</a></li>
                 <li><a href="#"> <i class="fa-solid fa-circle-user icon" style="color: black";></i>Log in</a></li>
+                <li><a href="/JewelryStore/pages/blogs.php" > <i class="fa-solid fa-circle-user icon" style="color: black";></i>Blogs</a></li>
                 <li><a href="#"><i class="fa-solid fa-phone icon "  style="color: black";></i>Contact</a></li>
             </ul>  
             </nav>
@@ -46,9 +47,9 @@
                 <button id="search">Search</button>
                 </div>
              <div class="img-banner owl-carousel">
-                    <img  src="images/banner/anh-banner-1.png" alt="banner">
-                    <img  src="images/banner/anh-banner-2.png" alt="banner">
-                    <img  src="images/banner/anh-banner-3.png" alt="banner">
+                    <img  src="/JewelryStore/images/banner/anh-banner-1.png" alt="banner">
+                    <img  src="/JewelryStore/images/banner/anh-banner-2.png" alt="banner">
+                    <img  src="/JewelryStore/images/banner/anh-banner-3.png" alt="banner">
              </div>
         
             <!-- <div class="box-content-banner content-banner">
