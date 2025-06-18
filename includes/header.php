@@ -10,7 +10,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Product</a></li>
                 <li><a href="#">Introduce</a></li>
-                <li><a href="#">Blogs</a></li>
+                <li><a href="./pages/blogs.php">Blogs</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>  
             </nav>

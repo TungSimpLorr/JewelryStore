@@ -1,0 +1,74 @@
+.category-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+.category-posts {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.category-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.category-thumb {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.category-info {
+    flex: 1;
+}
+
+.post-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+.post-title:hover {
+    color: #d4af37;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.back-button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-button a {
+    display: inline-block;
+    padding: 10px 16px;
+    border: 2px solid #000;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #000;
+    color: #fff;
+}
