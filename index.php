@@ -25,17 +25,21 @@
                 <li><a href="#"><i class="fa-solid fa-house icon " style="color: black";></i>Home</a></li>
                 <li><a href="#" id="product-option"><i class="fa-solid fa-gem icon " style="color: black";></i>Product</a>
                 <ul class="productbar">
-                    <li><a href="#">Nhẩn      </a></li>
-                    <li><a href="#">Dây chuyền</a></li>
-                    <li><a href="#">Đồng hồ   </a></li>
-                    <li><a href="#">Vòng tay  </a></li>
-                    <li><a href="#">Khuyên tai</a></li>
+                    <li><a href="/JewelryStore/pages/products.php?category=2">Nhẫn</a></li>
+                    <li><a href="/JewelryStore/pages/products.php?category=1">Vòng cổ</a></li>
+                    <li><a href="/JewelryStore/pages/products.php?category=4">Đồng hồ</a></li>
+                    <li><a href="/JewelryStore/pages/products.php?category=3">Vòng tay</a></li>
+                    <li><a href="/JewelryStore/pages/products.php?category=5">Khuyên tai</a></li>
+
                 </ul>
         
                 </li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping icon " style="color: black";></i>Giỏ hàng</a></li>
                 <li><a href="#"> <i class="fa-solid fa-circle-user icon" style="color: black";></i>Log in</a></li>
-                <li><a href="#"><i class="fa-solid fa-phone icon "  style="color: black";></i>Contact</a></li>
+                <li><a href="/JewelryStore/pages/contact.php"><i class="fa-solid fa-phone icon "  style="color: black";></i>Contact</a></li>
+                <li><a href="/JewelryStore/pages/blogs.php"><i class="fa-solid fa-newspaper icon " style="color: black";></i>Blogs</a></li>
+
+
             </ul>  
             </nav>
 
