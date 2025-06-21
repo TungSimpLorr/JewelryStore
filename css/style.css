@@ -452,7 +452,6 @@ footer
     font-size: 25px;
 
 }
-<<<<<<< HEAD
 /* RESET MENU */
 nav ul, nav li {
   list-style: none;
@@ -506,7 +505,6 @@ nav .main-menu > li > a {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-=======
 .content {
     max-width: 960px;
     margin: 40px auto;
@@ -596,4 +594,4 @@ nav .main-menu > li > a {
     background-color: #d4af37;
     color: white;
 }
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
+
