@@ -8,44 +8,26 @@ include "../includes/header.php";
 // HÀM CHUYỂN TIÊU ĐỀ THÀNH TÊN FILE ẢNH
 function convertToSlug($str) {
     $str = strtolower(trim($str));
-<<<<<<< HEAD
-
-    $viet = ['á','à','ả','ã','ạ','ă','ắ','ằ','ẳ','ẵ','ặ','â','ấ','ầ','ẩ','ẫ','ậ',
-             'đ',
-=======
     $viet = ['á','à','ả','ã','ạ','ă','ắ','ằ','ẳ','ẵ','ặ','â','ấ','ầ','ẩ','ẫ','ậ','đ',
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
              'é','è','ẻ','ẽ','ẹ','ê','ế','ề','ể','ễ','ệ',
              'í','ì','ỉ','ĩ','ị',
              'ó','ò','ỏ','õ','ọ','ô','ố','ồ','ổ','ỗ','ộ','ơ','ớ','ờ','ở','ỡ','ợ',
              'ú','ù','ủ','ũ','ụ','ư','ứ','ừ','ử','ữ','ự',
              'ý','ỳ','ỷ','ỹ','ỵ'];
-<<<<<<< HEAD
-    $ascii = ['a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a',
-              'd',
-=======
     $ascii = ['a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','d',
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
               'e','e','e','e','e','e','e','e','e','e','e',
               'i','i','i','i','i',
               'o','o','o','o','o','o','o','o','o','o','o','o','o','o','o','o','o',
               'u','u','u','u','u','u','u','u','u','u','u',
               'y','y','y','y','y'];
-<<<<<<< HEAD
-
-=======
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
     $str = str_replace($viet, $ascii, $str);
     $str = preg_replace('/[^a-z0-9]+/', '-', $str);
     return trim($str, '-') . '.jpg';
 }
 
-<<<<<<< HEAD
-=======
 // LẤY DANH SÁCH DANH MỤC
 $ds_danh_muc = $conn->query("SELECT id, ten_danh_muc FROM danh_muc_bai_viet");
 
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
 // PHÂN TRANG
 $limit = 3;
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
@@ -75,8 +57,7 @@ $result = $stmt->get_result();
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <div class="content">
-<<<<<<< HEAD
-=======
+
 
     <!-- DANH MỤC -->
     <div class="category-filter">
@@ -94,25 +75,22 @@ $result = $stmt->get_result();
     </div>
 
     <!-- DANH SÁCH BÀI VIẾT -->
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
+
     <div class="blog-grid">
         <?php
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $slug_image = convertToSlug($row['tieu_de']);
-<<<<<<< HEAD
                 $image_path = "/JewelryStore/images/" . $slug_image;
 
                 // Kiểm tra xem ảnh có thật sự tồn tại trên ổ đĩa không
                 $file_check_path = $_SERVER['DOCUMENT_ROOT'] . $image_path;
                 if (!file_exists($file_check_path)) {
                     $image_path = "/JewelryStore/images/no-image.jpg"; // fallback ảnh mặc định
-=======
                 $image_path = "/JewelryStore/images/blogs/" . $slug_image;
                 $file_check_path = $_SERVER['DOCUMENT_ROOT'] . $image_path;
                 if (!file_exists($file_check_path)) {
                     $image_path = "/JewelryStore/images/blogs/no-image.jpg";
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
                 }
 
                 echo '<div class="blog-card">';
@@ -130,10 +108,9 @@ $result = $stmt->get_result();
         ?>
     </div>
 
-<<<<<<< HEAD
-=======
+
     <!-- PHÂN TRANG -->
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
+
     <div class="pagination">
         <?php
         for ($i = 1; $i <= $total_pages; $i++) {
