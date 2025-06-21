@@ -36,15 +36,12 @@
                 </li>
                 <li><a href="#"><i class="fa-solid fa-cart-shopping icon " style="color: black";></i>Giỏ hàng</a></li>
                 <li><a href="#"> <i class="fa-solid fa-circle-user icon" style="color: black";></i>Log in</a></li>
-<<<<<<< HEAD
                 <li><a href="/JewelryStore/pages/contact.php"><i class="fa-solid fa-phone icon "  style="color: black";></i>Contact</a></li>
                 <li><a href="/JewelryStore/pages/blogs.php"><i class="fa-solid fa-newspaper icon " style="color: black";></i>Blogs</a></li>
 
-
-=======
                 <li><a href="/JewelryStore/pages/blogs.php" > <i class="fa-solid fa-circle-user icon" style="color: black";></i>Blogs</a></li>
                 <li><a href="#"><i class="fa-solid fa-phone icon "  style="color: black";></i>Contact</a></li>
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
+
             </ul>  
             </nav>
 
