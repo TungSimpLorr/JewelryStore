@@ -46,11 +46,8 @@ $bv = $result->fetch_assoc();
 
         if (!empty($bv['hinh_anh'])) {
             echo '<div class="blog-middle-image-wrapper">';
-<<<<<<< HEAD
             echo '<img class="blog-middle-image" src="/JewelryStore/images/blogs-detail/' . htmlspecialchars($bv['hinh_anh']) . '" alt="Ảnh giữa bài">';
-=======
             echo '<img class="blog-middle-image" src="/JewelryStore/images/blog-detail/' . htmlspecialchars($bv['hinh_anh']) . '" alt="Ảnh giữa bài">';
->>>>>>> 64dab01f8f2a9a34d776aa053084dc41e9a24e53
             echo '</div>';
         }
 
