@@ -5,7 +5,6 @@
         <div class="menu-bar">
             <div class="box-icon"><i class="fa-solid fa-bars" id="cart-bar-icon" onclick="hiensidebar()"></i></div>
             <nav>
-<<<<<<< HEAD
   <ul>
     <li><a href="/JewelryStore/index.php">Home</a></li>
     <li><a href="/JewelryStore/pages/products.php">Product</a></li>
