@@ -1,0 +1,141 @@
+/* Product Page Layout */
+.content {
+    max-width: 960px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+/* Tiêu đề khu vực sản phẩm */
+.product-section-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+}
+
+/* Lưới hiển thị sản phẩm */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* nhỏ hơn nữa */
+    gap: 16px;
+    padding: 20px;  /* bạn ghi thiếu đơn vị ở đây */
+}
+
+/* Thẻ sản phẩm */
+.product-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 12px;  /* giảm padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    max-width: 160px; /* giảm khung */
+    margin: 0 auto;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Ảnh sản phẩm */
+.product-image {
+    width: 100%;
+    height: 140px; /* giảm chiều cao ảnh */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* Tên sản phẩm */
+.product-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #2c2c2c;
+    line-height: 1.2;
+}
+
+/* Giá & thương hiệu */
+.product-brand,
+.product-price {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 4px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #d4af37;
+}
+
+/* Link xem chi tiết */
+.product-link {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.product-link:hover {
+    text-decoration: underline;
+}
+
+/* Phân trang */
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.page-link,
+.current-page {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 8px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.page-link {
+    background-color: #eee;
+    color: #333;
+}
+
+.page-link:hover {
+    background-color: #ccc;
+}
+
+.current-page {
+    background-color: #d4af37;
+    color: white;
+}
+/* Đảm bảo tất cả product-card có chiều cao bằng nhau */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Giới hạn chiều cao và cắt bớt nếu chữ quá dài */
+.product-title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Đảm bảo lưới sản phẩm có chiều cao thẻ đồng đều */
+.product-grid > .product-card {
+    height: 280px; /* hoặc em có thể chỉnh lại 260 / 300 tuỳ */
+}
+.product-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
