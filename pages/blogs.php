@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 include "../includes/connect.php";
 include "../includes/header.php";
@@ -25,9 +23,6 @@ function convertToSlug($str) {
     return trim($str, '-') . '.jpg';
 }
 
-// LẤY DANH SÁCH DANH MỤC
-$ds_danh_muc = $conn->query("SELECT id, ten_danh_muc FROM danh_muc_bai_viet");
-
 // PHÂN TRANG
 $limit = 3;
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
@@ -40,10 +35,10 @@ $total_posts = $total_row['total'];
 $total_pages = ceil($total_posts / $limit);
 
 // Lấy bài viết + tên người viết
-$sql = "SELECT bv.id, bv.tieu_de, bv.noi_dung, bv.ngay_tao, qtv.ten_quan_tri_vien
+$sql = "SELECT bv.id_bai_viet, bv.tieu_de, bv.noi_dung, bv.ngay_dang, qtv.ten_quan_tri_vien
         FROM bai_viet bv
-        LEFT JOIN quan_tri_vien qtv ON bv.id_quan_tri_vien = qtv.id_quan_tri_vien
-        ORDER BY bv.ngay_tao DESC
+        LEFT JOIN quan_tri_vien qtv ON bv.id_nguoi_tao = qtv.id_quan_tri_vien
+        ORDER BY bv.ngay_dang DESC
         LIMIT ? OFFSET ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ii", $limit, $offset);
@@ -58,35 +53,12 @@ $result = $stmt->get_result();
 
 <div class="content">
 
-
-    <!-- DANH MỤC -->
-    <div class="category-filter">
-        <strong>📂 Danh mục:</strong>
-        <?php
-        if ($ds_danh_muc && $ds_danh_muc->num_rows > 0) {
-            while ($dm = $ds_danh_muc->fetch_assoc()) {
-                echo '<a class="category-link" href="category_blog.php?id=' . $dm['id'] . '">' 
-                    . htmlspecialchars($dm['ten_danh_muc']) . '</a>';
-            }
-        } else {
-            echo '<span>Không có danh mục nào</span>';
-        }
-        ?>
-    </div>
-
     <!-- DANH SÁCH BÀI VIẾT -->
-
     <div class="blog-grid">
         <?php
         if ($result && $result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $slug_image = convertToSlug($row['tieu_de']);
-                $image_path = "/JewelryStore/images/" . $slug_image;
-
-                // Kiểm tra xem ảnh có thật sự tồn tại trên ổ đĩa không
-                $file_check_path = $_SERVER['DOCUMENT_ROOT'] . $image_path;
-                if (!file_exists($file_check_path)) {
-                    $image_path = "/JewelryStore/images/no-image.jpg"; // fallback ảnh mặc định
                 $image_path = "/JewelryStore/images/blogs/" . $slug_image;
                 $file_check_path = $_SERVER['DOCUMENT_ROOT'] . $image_path;
                 if (!file_exists($file_check_path)) {
@@ -96,10 +68,10 @@ $result = $stmt->get_result();
                 echo '<div class="blog-card">';
                 echo '<img class="blog-image" src="' . $image_path . '" alt="' . htmlspecialchars($row['tieu_de']) . '">';
                 echo '<h3 class="blog-title">' . htmlspecialchars($row['tieu_de']) . '</h3>';
-                echo '<p class="blog-date">Ngày đăng: ' . date("d/m/Y", strtotime($row['ngay_tao'])) . '</p>';
+                echo '<p class="blog-date">Ngày đăng: ' . date("d/m/Y", strtotime($row['ngay_dang'])) . '</p>';
                 echo '<p class="blog-author">Người viết: ' . htmlspecialchars($row['ten_quan_tri_vien'] ?? 'Không rõ') . '</p>';
                 echo '<p class="blog-excerpt">' . mb_strimwidth(strip_tags($row['noi_dung']), 0, 150, "...") . '</p>';
-                echo '<a class="read-more" href="blogs-detail.php?id=' . $row['id'] . '">Đọc thêm &raquo;</a>';
+                echo '<a class="read-more" href="blogs-detail.php?id=' . $row['id_bai_viet'] . '">Đọc thêm &raquo;</a>';
                 echo '</div>';
             }
         } else {
@@ -108,9 +80,7 @@ $result = $stmt->get_result();
         ?>
     </div>
 
-
     <!-- PHÂN TRANG -->
-
     <div class="pagination">
         <?php
         for ($i = 1; $i <= $total_pages; $i++) {
