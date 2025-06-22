@@ -2,8 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include "../includes/connect.php";
-include "../includes/header.php";
+include "../../Jewelry Store/includes/connect.php";
+include "../../Jewelry Store/includes/header.php";
 
 // HÀM CHUYỂN TIÊU ĐỀ THÀNH TÊN FILE ẢNH
 function convertToSlug($str) {
@@ -51,8 +51,8 @@ $stmt->execute();
 $result = $stmt->get_result();
 ?>
 
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/blogs.css">
+<link rel="stylesheet" href="../../Jewelry Store/css/style.css">
+<link rel="stylesheet" href="../../Jewelry Store/css/blogs.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -114,4 +114,4 @@ $result = $stmt->get_result();
     </div>
 </div>
 
-<?php include "../includes/footer.php"; ?>
+<?php include "../../Jewelry Store/includes/footer.php"; ?>

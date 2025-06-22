@@ -1,4 +1,6 @@
-
+<head>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
      <footer>
             <div class="footer-top">
                 <h2>Stay up to date with our exclusive offers<br />and new products</h2>

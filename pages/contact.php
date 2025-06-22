@@ -40,10 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../js/main.js"></script>
 </head>
 
 <body class="contact-page">
    <?php include "../includes/header.php"; ?>
+    <?php include "../includes/nav.php"; ?>
    <?php if (!empty($successMessage)): ?>
           <div class="success-message">
             <?= htmlspecialchars($successMessage) ?>
@@ -132,27 +134,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </section>
 
-    <!-- Mạng xã hội -->
-    <section class="social-media-contact">
-      <h3>Kết nối qua mạng xã hội</h3>
-      <div class="social-icons-list">
-        <a href="https://www.facebook.com/yourpage" target="_blank" title="Facebook" class="social-icon">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com/yourpage" target="_blank" title="Instagram" class="social-icon">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.youtube.com/yourchannel" target="_blank" title="YouTube" class="social-icon">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://www.google.com/maps/place/yourbusiness" target="_blank" title="Google" class="social-icon">
-          <i class="fa-brands fa-google"></i>
-        </a>
-        <a href="https://www.tiktok.com/@yourpage" target="_blank" title="TikTok" class="social-icon">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
-      </div>
-    </section>
   </main>
   <?php include "../includes/footer.php"; ?>
   <script>

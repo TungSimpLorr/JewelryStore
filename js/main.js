@@ -1,13 +1,16 @@
 $(document).ready(function(){
+    
     $('.search-box').hide();
-    $('#cart-search-icon').click(function(){
-        $('.search-box').slideToggle(300);
+    $('#cart-search-icon').click(function(e){
+        e.preventDefault();
+        $('.search-box').slideToggle(500);
+
     });
     
     $('.productbar').hide();
     $('#product-option').click(function(e){
         e.preventDefault(); 
-        $('.productbar').slideToggle(300);
+        $('.productbar').slideToggle(1000);
     });
     
      $(".product-type-list").owlCarousel({
@@ -29,6 +32,19 @@ $(document).ready(function(){
       autoplayHoverPause: true
     });
 
+   
+    const trangchinh = document.getElementsByClassName('container')[0];
+    $('.basket').hide();
+    $('#cart-shopping-icon').click(function(e){
+          e.preventDefault();
+        $('.basket').slideDown();
+         trangchinh.style.display="none";
+    });
+    $('#exit-icon').click(function (e){
+          e.preventDefault();
+        $('.basket').slideUp();
+        trangchinh.style.display="block";
+    });
 });
 
 function hiensidebar()
@@ -45,4 +61,18 @@ function hiensidebar()
         }
 
     };
+
+// function antrangchinh()
+// {    const giohang =  document.getElementsByClassName('basket')[0];
+//      const trangchinh = document.getElementsByClassName('container')[0];
+//         if(giohang.style.display==="flex")
+//         {
+//             trangchinh.style.display="none";
+//         }
+//         else
+//         {
+//             trangchinh.style.display="block";
+//         }
+
+//     };
 
