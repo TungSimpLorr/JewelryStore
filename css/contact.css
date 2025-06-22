@@ -1,3 +1,4 @@
+
 body.contact-page {
     font-family: 'Times New Roman', Times, serif; 
     background-color: #ffffff; 
@@ -23,7 +24,7 @@ body.contact-page {
 
 
 .contact-hero-section {
-    background-image: url('../images/banner/anh-intro-contact.jpg');
+    background-image: url('JewelryStore/images/banner/anh-intro-contact.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -43,7 +44,7 @@ body.contact-page {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(-45deg, lightgray, gray, lightblue); 
+    background: linear-gradient(-45deg, lightgray, gray); 
     background-size: 300% 300%;
     animation: gradientBG 15s ease infinite;
     z-index: 1; /* Nằm trên ảnh nền, dưới chữ */
@@ -169,7 +170,7 @@ body.contact-page {
 /* ĐỊNH NGHĨA CỤ THỂ CHO LINK TRONG CÁC MỤC NÀY */
 .store-address p a,
 .general-contact p a {
-    color: #007bff; 
+    color: #d4af37; 
     text-decoration: none; 
     padding: 0; 
 }
@@ -177,7 +178,7 @@ body.contact-page {
 .store-address p a:hover,
 .general-contact p a:hover {
     text-decoration: underline; 
-    color: #0056b3; 
+    color: #d4af37; 
 }
 
 .store-address p strong,
@@ -185,7 +186,7 @@ body.contact-page {
     color: #000000; 
 }
 .faq-link { /* Link đến FAQ */
-    color: #007bff;
+    color: #d4af37;
     font-weight: 500;
 }
 .faq-link:hover {
@@ -262,7 +263,7 @@ body.contact-page {
 .form-group input[type="email"]:focus,
 .form-group input[type="tel"]:focus,
 .form-group textarea:focus {
-    border-color: #f4b400; /* vàng nhẹ */
+    border-color: #d4af37; /* vàng nhẹ */
     box-shadow: 0 0 8px rgba(244, 180, 0, 0.3);
     outline: none;
 }
@@ -303,9 +304,9 @@ body.contact-page {
 /* Phần success_message*/
 .success-message {
   background-color: #d4edda;
-  color: #155724;
+  color: #d4af37;
   padding: 15px 20px;
-  border-left: 5px solid #28a745;
+  border-left: 5px solid #d4af37;
   border-radius: 5px;
   margin: 20px auto;
   width: 90%;
@@ -386,5 +387,14 @@ body.contact-page {
         padding: 20px;
     }
 
+}
+
+body.contact-page {
+    font-family: 'Times New Roman', Times, serif; 
+    background-color: #ffffff; 
+    color: #000000;            
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 

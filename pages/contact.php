@@ -1,5 +1,5 @@
 <?php
-$successMessage = ""; // Biến lưu thông báo
+$successMessage = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn = new mysqli("localhost", "root", "", "contact_jewelrystore");
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             Chủ Nhật & Ngày lễ: 10:00 - 19:00
           </p>
           <p>
-            <strong> <i class="fa-solid fa-circle-question"></i> Bạn có câu hỏi?</strong> Xem qua trang <a href="faq.html" class="faq-link">Câu hỏi thường gặp</a> của chúng tôi.
+            <strong> <i class="fa-solid fa-circle-question"></i> Bạn có câu hỏi?</strong> Xem qua trang <a href="faq.php" class="faq-link">Câu hỏi thường gặp</a> của chúng tôi.
           </p>
         </div>
       </section>
@@ -138,13 +138,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <?php include "../includes/footer.php"; ?>
   <script>
   setTimeout(() => {
-    const msg = document.querySelector(".success-message");
-    if (msg) {
-      msg.style.transition = "opacity 0.5s ease-out";
-      msg.style.opacity = 0;
-      setTimeout(() => msg.remove(), 500); // Xoá khỏi DOM
-    }
-  }, 5000); // Sau 5 giây
+  document.querySelector(".success-message")?.remove();
+}, 5000);
 </script>
 </body>
 </html>
