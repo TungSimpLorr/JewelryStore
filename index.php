@@ -26,40 +26,16 @@
         <main>
         
             <div class="boxcenter">
-           <div class="sidebar">
-            <nav>
-              <ul>
-                <li><a href="#"><i class="fa-solid fa-house icon " style="color: black";></i>Home</a></li>
-                <li><a href="#" id="product-option"><i class="fa-solid fa-gem icon " style="color: black";></i>Product</a>
-                <ul class="productbar">
-                    <li><a href="#">Nhẩn      </a></li>
-                    <li><a href="#">Dây chuyền</a></li>
-                    <li><a href="#">Đồng hồ   </a></li>
-                    <li><a href="#">Vòng tay  </a></li>
-                    <li><a href="#">Khuyên tai</a></li>
-                </ul>
-        
-                </li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping icon " style="color: black";></i>Giỏ hàng</a></li>
-                <li><a href="#"> <i class="fa-solid fa-circle-user icon" style="color: black";></i>Log in</a></li>
-                <li><a href="/JewelryStore/pages/blogs.php" > <i class="fa-solid fa-circle-user icon" style="color: black";></i>Blogs</a></li>
-                <li><a href="#"><i class="fa-solid fa-phone icon "  style="color: black";></i>Contact</a></li>
-            </ul>  
-            </nav>
+            <?php include "./includes/nav.php"; ?>
+                <div class="box-banner">
+                     
+                    <div class="img-banner owl-carousel">
+                        <img src="./images/banner/anh-banner-1.png" alt="banner">
+                        <img src="./images/banner/anh-banner-2.png" alt="banner">
+                        <img src="./images/banner/anh-banner-3.png" alt="banner">
+                    </div>
 
-           </div> 
-            <div class="box-banner">
-             <div class="search-box">
-               <input type="text" placeholder="Bạn đang tìm gì...">
-                <button id="search">Search</button>
-                </div>
-             <div class="img-banner owl-carousel">
-                    <img  src="/JewelryStore/images/banner/anh-banner-1.png" alt="banner">
-                    <img  src="/JewelryStore/images/banner/anh-banner-2.png" alt="banner">
-                    <img  src="/JewelryStore/images/banner/anh-banner-3.png" alt="banner">
-             </div>
-        
-            <!-- <div class="box-content-banner content-banner">
+                    <!-- <div class="box-content-banner content-banner">
                 <div class="content-banner">
                     <h2>Mua sắm tại Jewelry Store</h2>
                     <h3>Giảm giá 10% cho các hóa đơn trên 5 triệu VND.</h3>

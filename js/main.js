@@ -62,17 +62,3 @@ function hiensidebar()
 
     };
 
-// function antrangchinh()
-// {    const giohang =  document.getElementsByClassName('basket')[0];
-//      const trangchinh = document.getElementsByClassName('container')[0];
-//         if(giohang.style.display==="flex")
-//         {
-//             trangchinh.style.display="none";
-//         }
-//         else
-//         {
-//             trangchinh.style.display="block";
-//         }
-
-//     };
-
