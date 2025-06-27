@@ -1,5 +1,5 @@
 <head>
-      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="/Jewelry%20Store/css/style.css">
 </head>
 <body>
     
@@ -21,7 +21,7 @@
             
         <div class="box-icon">
                        <a href="#"> <i class="fa-solid fa-magnifying-glass" id="cart-search-icon"></i></a>
-                       <a href="#"> <i class="fa-solid fa-cart-shopping " id="cart-shopping-icon"></i></a>
+                       <a href="#"> <i class="fa-solid fa-cart-shopping " id="cart-shopping-icon"><span class="circle"><p>1</p></span></i></a>
                        <a href="#"> <i class="fa-solid fa-circle-user" id="cart-user-icon"></i></a>
         </div>
      

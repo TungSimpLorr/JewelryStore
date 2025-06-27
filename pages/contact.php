@@ -37,15 +37,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <title>Liên Hệ - JewelryStore</title>
 
   <link rel="stylesheet" href="../css/contact.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/Jewelry%20Store/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="/Jewelry%20Store/js/main.js"></script>
 </head>
 
 <body class="contact-page">
    <?php include "../includes/header.php"; ?>
-    <?php include "../includes/nav.php"; ?>
+
    <?php if (!empty($successMessage)): ?>
           <div class="success-message">
             <?= htmlspecialchars($successMessage) ?>

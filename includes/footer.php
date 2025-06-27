@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="/Jewelry%20Store/css/style.css"/>
 </head>
      <footer>
             <div class="footer-top">
