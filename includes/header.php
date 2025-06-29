@@ -1,5 +1,6 @@
 <head>
-      <link rel="stylesheet" href="/Jewelry%20Store/css/style.css">
+    <link rel="stylesheet" href="/Jewelry%20Store/css/style.css">   
+
 </head>
 <body>
     
@@ -8,7 +9,7 @@
                 <p>Mua sắm trực tuyến tại Jewelry Store - Liên hệ : 0123456789</p>
             </div>
         <div class="menu-bar">
-            <div class="box-icon"><i class="fa-solid fa-bars" id="cart-bar-icon" onclick="hiensidebar()"></i></div>
+            <div class="box-icon"></div>
             <nav>
               <ul>
                 <li><a href="../../Jewelry Store/index.php">Home</a></li>
@@ -21,7 +22,7 @@
             
         <div class="box-icon">
                        <a href="#"> <i class="fa-solid fa-magnifying-glass" id="cart-search-icon"></i></a>
-                       <a href="#"> <i class="fa-solid fa-cart-shopping " id="cart-shopping-icon"><span class="circle"><p>1</p></span></i></a>
+                       <a href="#"> <i class="fa-solid fa-cart-shopping " id="cart-shopping-icon"><span class="circle" id="update-number-cart"><p>1</p></span></i></a>
                        <a href="#"> <i class="fa-solid fa-circle-user" id="cart-user-icon"></i></a>
         </div>
      

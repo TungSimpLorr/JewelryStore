@@ -42,8 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/Jewelry%20Store/js/main.js"></script>
 </head>
-
-<body class="contact-page">
+<?php include "../pages/cart.php"; ?>
+<body>
+  
+  <div class="contact-page">
+   
    <?php include "../includes/header.php"; ?>
 
    <?php if (!empty($successMessage)): ?>
@@ -141,5 +144,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   document.querySelector(".success-message")?.remove();
 }, 5000);
 </script>
+    </div>
 </body>
 </html>

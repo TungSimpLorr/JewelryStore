@@ -57,7 +57,7 @@ $result = $stmt->get_result();
 <link rel="stylesheet" href="../css/product.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script scr="../js/main.js"></script>
+<script src="/Jewelry%20Store/js/main.js"></script>
 <div class="content">
     <h2 class="product-section-title">
     <?php echo $categoryName ? htmlspecialchars($categoryName) : "Tất cả sản phẩm"; ?>

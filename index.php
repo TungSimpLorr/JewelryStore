@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jewelry Store</title>
     <link rel="stylesheet" href="/Jewelry%20Store/css/style.css"/>
-    <script src="https://kit.fontawesome.com/3a3ccaffa9.js" crossorigin="anonymous"></script>
-    <script src="/Jewelry%20Store/js/jquery-3.7.1.min.js"></script>
-    <script src="/Jewelry%20Store/js/main.js"></script>
-    <script src="/Jewelry%20Store/js/owl.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <script src="https://kit.fontawesome.com/3a3ccaffa9.js" crossorigin="anonymous"></script>
+    <script src="/Jewelry%20Store/js/jquery-3.7.1.min.js"></script>   
+    <script src="/Jewelry%20Store/js/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="/Jewelry%20Store/js/owl.js"></script>
+   
+    
+
 </head>
 
 <body>
