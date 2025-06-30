@@ -488,7 +488,11 @@ insert into anh_san_pham (id_san_pham, url_anh) values
 (50,'https://www.vancleefarpels.com/content/dam/rcq/vca/18/16/50/3/1816503.png'),
 (50,'https://www.vancleefarpels.com/content/dam/rcq/vca/17/08/14/5/1708145.png'),
 (50, 'https://www.vancleefarpels.com/content/dam/rcq/vca/17/08/14/6/1708146.png');
-
+--chèn data cho bảng quản trị viên
+INSERT INTO quan_tri_vien (id_quan_tri_vien, ten_quan_tri_vien, mat_khau_ma_hoa, quyen) VALUES
+(1, 'Hine', '123456', NULL),
+(2, 'Chuyên Gia ', '123456', NULL),
+(3, 'Admin ', '123456', NULL);
 --chèn data vào bảng danh mục bài viết 
 INSERT INTO danh_muc_bai_viet (id_danh_muc, ten_danh_muc) VALUES
 (1, 'Câu chuyện JewelryStore '),
