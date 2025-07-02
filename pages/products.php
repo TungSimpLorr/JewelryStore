@@ -48,7 +48,7 @@ if (!empty($_GET['price'])) {
         $where[] = "sp.gia_san_pham >= 10000000";
     }
 }
-// Lọc theo categoryId nếu có
+// Lọc theo categoryId 
 if ($categoryId > 0) {
     $where[] = "sp.id_loai_san_pham = ?";
     $params[] = $categoryId;
@@ -90,45 +90,44 @@ $result = $stmt->get_result();
     <h2 class="product-section-title">
     <?php echo $categoryName ? htmlspecialchars($categoryName) : "Tất cả sản phẩm"; ?>
 </h2>
-
-    <div style="display:flex; gap:32px; align-items:flex-start;">
-        <!-- Sidebar bộ lọc -->
-        <form method="GET" style="min-width:240px; max-width:260px; background:#fffbe6; border:1px solid #e6c200; border-radius:10px; padding:24px 18px 18px 18px; color:#222; font-size:16px; box-shadow:0 2px 8px rgba(0,0,0,0.03); margin-bottom:24px;">
-            <div style="margin-bottom:22px;">
-                <div style="font-weight:bold; color:#222; margin-bottom:10px;">Khoảng giá</div>
-                <label style="display:block; margin-bottom:8px; color:#bfa100;"><input type="radio" name="price" value="1-5" style="width:16px;height:16px;vertical-align:middle;" <?php if(isset($_GET['price']) && $_GET['price']=='1-5') echo 'checked'; ?>> 1-5 triệu</label>
-                <label style="display:block; margin-bottom:8px; color:#bfa100;"><input type="radio" name="price" value="5-10" style="width:16px;height:16px;vertical-align:middle;" <?php if(isset($_GET['price']) && $_GET['price']=='5-10') echo 'checked'; ?>> 5-10 triệu</label>
-                <label style="display:block; color:#bfa100;"><input type="radio" name="price" value="10+" style="width:16px;height:16px;vertical-align:middle;" <?php if(isset($_GET['price']) && $_GET['price']=='10+') echo 'checked'; ?>> Trên 10 triệu</label>
-            </div>
-            <div style="margin-bottom:22px;">
-                <div style="font-weight:bold; color:#222; margin-bottom:10px;">Loại sản phẩm</div>
-                <select name="type" style="width:100%; padding:6px 8px; border-radius:4px; border:1px solid #e6c200;">
-                    <option value="">Tất cả</option>
-                    <?php
-                    $types = ['Vòng cổ', 'Nhẫn', 'Vòng tay', 'Đồng hồ', 'Hoa tai'];
-                    foreach ($types as $type) {
-                        $selected = (isset($_GET['type']) && $_GET['type'] == $type) ? 'selected' : '';
-                        echo "<option value=\"$type\" $selected>$type</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-            <div style="margin-bottom:22px;">
-                <div style="font-weight:bold; color:#222; margin-bottom:10px;">Chất liệu</div>
-                <select name="material" style="width:100%; padding:6px 8px; border-radius:4px; border:1px solid #e6c200;">
-                    <option value="">Tất cả</option>
-                    <?php
-                    $materials = ['Vàng', 'Bạc', 'Kim cương', 'Ngọc trai'];
-                    foreach ($materials as $mat) {
-                        $selected = (isset($_GET['material']) && $_GET['material'] == $mat) ? 'selected' : '';
-                        echo "<option value=\"$mat\" $selected>$mat</option>";
-                    }
-                    ?>
-                </select>
-            </div>
-            <button type="submit" style="background:#222; color:#fffbe6; border:none; border-radius:4px; padding:8px 0; width:100%; font-weight:bold; cursor:pointer; font-size:16px;">Lọc</button>
-        </form>
-        <!-- Danh sách sản phẩm -->
+<div style="display:flex; gap:32px; align-items:flex-start; margin-top: 20px;">
+    <!-- Sidebar bộ lọc -->
+    <form method="GET" class="filter-sidebar">
+        <div class="filter-block">
+            <div class="filter-title">Khoảng giá</div>
+            <label class="filter-radio"><input type="radio" name="price" value="1-5" <?php if(isset($_GET['price']) && $_GET['price']=='1-5') echo 'checked'; ?>> 1-5 triệu</label>
+            <label class="filter-radio"><input type="radio" name="price" value="5-10" <?php if(isset($_GET['price']) && $_GET['price']=='5-10') echo 'checked'; ?>> 5-10 triệu</label>
+            <label class="filter-radio"><input type="radio" name="price" value="10+" <?php if(isset($_GET['price']) && $_GET['price']=='10+') echo 'checked'; ?>> Trên 10 triệu</label>
+        </div>
+        <div class="filter-block">
+            <div class="filter-title">Loại sản phẩm</div>
+            <select name="type" class="filter-select">
+                <option value="">Tất cả</option>
+                <?php
+                $types = ['Vòng cổ', 'Nhẫn', 'Vòng tay', 'Đồng hồ', 'Hoa tai'];
+                foreach ($types as $type) {
+                    $selected = (isset($_GET['type']) && $_GET['type'] == $type) ? 'selected' : '';
+                    echo "<option value=\"$type\" $selected>$type</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="filter-block">
+            <div class="filter-title">Chất liệu</div>
+            <select name="material" class="filter-select">
+                <option value="">Tất cả</option>
+                <?php
+                $materials = ['Vàng', 'Bạc', 'Kim cương', 'Ngọc trai'];
+                foreach ($materials as $mat) {
+                    $selected = (isset($_GET['material']) && $_GET['material'] == $mat) ? 'selected' : '';
+                    echo "<option value=\"$mat\" $selected>$mat</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <button type="submit" class="filter-btn">Lọc</button>
+    </form>
+    <!-- Danh sách sản phẩm -->
         <div style="flex:1;">
             <div class="product-grid">
                 <?php
@@ -146,10 +145,9 @@ $result = $stmt->get_result();
                     echo "<p style='color:red;'>Không có sản phẩm nào.</p>";
                 }
                 ?>
-            </div>
+           </div>
             <div class="pagination">
                 <?php
-                // Giữ lại các tham số lọc khi chuyển trang
                 $queryStr = $_GET;
                 foreach(['page'] as $unset) unset($queryStr[$unset]);
                 $baseUrl = '?' . http_build_query($queryStr);
@@ -163,8 +161,7 @@ $result = $stmt->get_result();
                 }
                 ?>
             </div>
-        </div>
-    </div>
-</div>
-
+        </div> 
+    </div> 
+</div> 
 <?php include "../includes/footer.php"; ?>
