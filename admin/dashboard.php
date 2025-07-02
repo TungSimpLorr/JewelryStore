@@ -6,45 +6,69 @@
     <style>
         .dashboard-box {
             background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(212,175,55,0.10);
-            padding: 36px 24px 24px 24px;
+            border-radius: 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            padding: 32px 24px 24px 24px;
             text-align: center;
-            flex: 1;
-            margin: 0 16px;
-            border: 2px solid black;
-            transition: box-shadow 0.3s;
+            margin: 0 0 0 0;
+            border: 2px solid #111;
+            transition: box-shadow 0.3s, border-color 0.2s;
+            max-width: 300px;
+            width: 100%;
         }
         .dashboard-box:hover {
-            box-shadow: 0 8px 32px rgba(212,175,55,0.18);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            border-color: #000;
         }
-        .dashboard-row {
+        .dashboard-row, .boxcenter {
             display: flex;
-            gap: 32px;
+            flex-direction: row;
+            align-items: stretch;
             justify-content: center;
-            margin: 48px 0 32px 0;
+            gap: 32px;
+            margin: 32px 0 32px 0;
         }
         .dashboard-value {
-            font-size: 2.8rem;
-            color: black;
+            font-size: 2.2rem;
+            color: #111;
             font-weight: bold;
             margin-bottom: 10px;
         }
         .dashboard-label {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #222;
         }
         @media (max-width: 900px) {
-            .dashboard-row { flex-direction: column; gap: 20px; }
-            .dashboard-box { margin: 0 0 20px 0; }
+            .dashboard-row, .boxcenter { flex-direction: column; gap: 0; }
+            .dashboard-box { margin: 0 0 20px 0; max-width: 100%; }
         }
         .dashboard-chart-container {
             max-width: 600px;
             margin: 0 auto 40px auto;
             background: #fff;
             border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(212,175,55,0.08);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
             padding: 32px 24px;
+        }
+        .dashboard-btn {
+            background: #111;
+            color: #fff !important;
+            border: 2px solid #111;
+            border-radius: 12px;
+            padding: 14px 32px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .dashboard-btn:hover {
+            background: #fff;
+            color: #111 !important;
+            border-color: #111;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -67,9 +91,9 @@ $total_dt = $result ? $result->fetch_assoc()['total'] : 0;
 <main>
     <div class="container">
         <div style="display:flex; justify-content:center; gap:32px; margin:36px 0 18px 0;">
-            <a href="manage-products.php" style="min-width:170px; text-align:center; background:#fff; color:#111; border:2px solid #111; font-weight:bold; font-size:18px; border-radius:8px; padding:14px 0; transition:all 0.2s; text-decoration:none;">Quản lý sản phẩm</a>
-            <a href="manage-blogs.php" style="min-width:170px; text-align:center; background:#fff; color:#111; border:2px solid #111; font-weight:bold; font-size:18px; border-radius:8px; padding:14px 0; transition:all 0.2s; text-decoration:none;">Quản lý bài viết</a>
-            <a href="orders.php" style="min-width:170px; text-align:center; background:#fff; color:#111; border:2px solid #111; font-weight:bold; font-size:18px; border-radius:8px; padding:14px 0; transition:all 0.2s; text-decoration:none;">Quản lý đơn hàng</a>
+            <a href="manage-products.php" class="dashboard-btn">Quản lý sản phẩm</a>
+            <a href="manage-blogs.php" class="dashboard-btn">Quản lý bài viết</a>
+            <a href="orders.php" class="dashboard-btn">Quản lý đơn hàng</a>
         </div>
         <div class="boxcenter" style="justify-content:center;gap:40px;margin-top:40px;">
             <div class="dashboard-box">
@@ -100,13 +124,13 @@ $total_dt = $result ? $result->fetch_assoc()['total'] : 0;
                 label: 'Thống kê',
                 data: [<?php echo $total_sp; ?>, <?php echo $total_dh; ?>, <?php echo $total_dt ? $total_dt : 0; ?>],
                 backgroundColor: [
-                    'rgba(212, 175, 55, 0.7)',
-                    'rgba(6, 123, 84, 0.7)',
+                    'rgba(0, 0, 0, 0.7)',
+                    'rgba(0, 0, 0, 0.7)',
                     'rgba(0, 0, 0, 0.7)'
                 ],
                 borderColor: [
-                    'rgba(212, 175, 55, 1)',
-                    'rgba(6, 123, 84, 1)',
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(0, 0, 0, 1)',
                     'rgba(0, 0, 0, 1)'
                 ],
                 borderWidth: 2

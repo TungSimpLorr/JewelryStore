@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Thêm sản phẩm mới</title>
-    <link rel="stylesheet" href="add-product.css">
+    <link rel="stylesheet" href="add-products.css">
 </head>
 <body>
 <?php
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <main>
     <div class="container">
-        <h2 style="margin:30px 0 20px 0;">Thêm sản phẩm mới</h2>
+        <h2 class="add-product-title">Thêm sản phẩm mới</h2>
         <?php echo $msg; ?>
         <form method="post" class="add-product-form">
             <label>Tên sản phẩm:<input type="text" name="ten" required></label>
@@ -59,8 +59,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Ảnh đại diện (URL):<input type="text" name="anh" required></label>
             <label>Mô tả:<textarea name="mota" rows="3"></textarea></label>
             <label class="checkbox-label"><span>Hiển thị</span><input type="checkbox" name="trangthai" checked></label>
-            <button type="submit" class="add-btn">Thêm sản phẩm</button>
-            <a href="manage-products.php" class="action-btn edit-btn" style="margin-left:10px;">Quay lại</a>
+            <div class="form-actions">
+                <button type="submit" class="add-btn">Thêm sản phẩm</button>
+                <a href="manage-products.php" class="action-btn edit-btn">Quay lại</a>
+            </div>
         </form>
     </div>
 </main>

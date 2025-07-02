@@ -152,7 +152,18 @@ create table `bai_viet` (
   foreign key (`id_nguoi_tao`) references `quan_tri_vien`(`id_quan_tri`) on delete restrict on update cascade
 ) engine=innodb default charset=utf8mb4 collate=utf8mb4_unicode_ci;
 
--- chen vao bang loai san pham 
+--bang chi tiet bai viet
+create table `chi_tiet_bai_viet` (
+  `id_chi_tiet_bai_viet` int(11) not null auto_increment,
+  `id_bai_viet` int(11) not null,
+  `noi_dung` text not null,
+  `hinh_anh` varchar(1000) default null,
+  `created_at` timestamp default current_timestamp(),
+  primary key (`id_chi_tiet_bai_viet`),
+  foreign key (`id_bai_viet`) references `bai_viet`(`id_bai_viet`) on delete cascade on update cascade
+) engine=innodb default charset=utf8mb4 collate=utf8mb4_unicode_ci;
+
+-- chen vao bang loai san pham
 insert into `loai_san_pham` (`id_loai_san_pham`, `ten_loai`) values
 (1, 'Vòng cổ'),
 (2, 'Nhẫn'),
@@ -524,3 +535,9 @@ INSERT INTO chi_tiet_bai_viet (id_bai_viet, noi_dung, hinh_anh, created_at) VALU
 (10, 'Vòng Tay Tối Giản:Vòng tay mảnh làm từ bạc hoặc vàng hồng, điểm xuyết đá sapphire nhỏ, là lựa chọn lý tưởng cho mùa hè. Thiết kế nhẹ nhàng, dễ phối với áo croptop hoặc váy maxi, mang lại vẻ thanh thoát và mát mẻ.\r\n\r\nVòng Tay Handmade Đa Màu:Những chiếc vòng đan thủ công với hạt cườm màu sắc tươi sáng như vàng chanh, xanh neon phù hợp với không khí hè. Phối cùng đồ bơi hoặc trang phục dạo biển, chúng tạo điểm nhấn vui tươi và cá tính.\r\n\r\nVòng Tay Charm Cá Nhân Hóa:Vòng tay charm với các hạt trang trí theo sở thích, như hình ngôi sao hoặc ký tự ban đầu, đang hot. Dễ dàng điều chỉnh để phù hợp với phong cách, đây là phụ kiện hoàn hảo cho các buổi tiệc ngoài trời.\r\n\r\nVòng Tay Đá Phong Thủy:Vòng tay làm từ thạch anh hoặc ngọc bích, mang ý nghĩa may mắn, rất được ưa chuộng. Thiết kế tự nhiên kết hợp với dây vải nhẹ giúp giữ mát, lý tưởng cho những ngày nắng nóng.', 'bai_viet10.jpg', '2025-06-18 03:11:40'),
 (11, 'Nguyên Nhân Bạc Bị Đen:Bạc bị đen (hay còn gọi là xỉn màu) do phản ứng với lưu huỳnh trong không khí, mồ hôi hoặc hóa chất như nước hoa. Quá trình này thường xảy ra nhanh hơn trong môi trường ẩm hoặc khi không bảo quản đúng cách, làm giảm độ sáng bóng của trang sức bạc.\r\n\r\nCách Xử Lý:Dùng Baking Soda: Trộn 1 thìa baking soda với nước, nhúng bạc vào trong 5 phút, sau đó lau nhẹ bằng khăn mềm.\r\n\r\nGiấm và Muối: Ngâm bạc trong hỗn hợp giấm và muối (tỷ lệ 1:1) trong 10 phút, rồi rửa sạch và lau khô.\r\n\r\nBảo Quản: Lưu trữ bạc trong túi chống ẩm sau khi sử dụng để tránh xỉn màu.', 'bai_viet11.jpg', '2025-06-18 03:11:40'),
 (12, 'Phong Cách Tối Giản và Layering:Năm 2025, phụ nữ yêu thích phong cách tối giản với dây chuyền mảnh, nhẫn trơn và hoa tai nhỏ, dễ phối cùng trang phục công sở. Layering – nghệ thuật phối nhiều lớp trang sức – cũng trở thành xu hướng, mang lại vẻ ngoài cá tính và hiện đại.', 'bai_viet12.jpg', '2025-06-18 03:11:40');
+
+--chèn data vào bảng quản trị viên
+INSERT INTO quan_tri_vien (id_quan_tri, ten_dang_nhap, mat_khau, email, ho_ten, quyen_han) VALUES
+(1, 'Hine', '123456', 'hienttt2462@ut.edu.vn', 'Thu Hiền', 'admin'),
+(2, 'chuyengia', '123456', 'chuyengiajs@gmail.com', 'Chuyên gia', 'admin'),
+(3, 'nttung', '123456', 'nttung@gmail.com', 'Tùng Nguyễn', 'admin');

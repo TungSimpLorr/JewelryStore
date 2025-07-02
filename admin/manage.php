@@ -8,16 +8,26 @@
 <body>
 <?php
 include '../includes/connect.php';
+// Phân trang
+$limit = 10;
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($page - 1) * $limit;
+// Đếm tổng số sản phẩm
+$total_result = $conn->query("SELECT COUNT(*) as total FROM san_pham");
+$total_row = $total_result ? $total_result->fetch_assoc()['total'] : 0;
+$total_page = ceil($total_row / $limit);
 // Lấy danh sách sản phẩm
 $sql = "SELECT sp.*, lsp.ten_loai, th.ten_thuong_hieu FROM san_pham sp
         LEFT JOIN loai_san_pham lsp ON sp.id_loai_san_pham = lsp.id_loai_san_pham
         LEFT JOIN thuong_hieu th ON sp.id_thuong_hieu = th.id_thuong_hieu
-        ORDER BY sp.id_san_pham DESC";
+        ORDER BY sp.id_san_pham DESC
+        LIMIT $limit OFFSET $offset";
 $result = $conn->query($sql);
 ?>
 <main>
     <div class="container">
-        <a href="index.php" class="add-btn" style="margin-bottom: 16px; margin-right: 12px;">Quay lại</a>
+        <h1 class="page-title">QUẢN LÝ SẢN PHẨM</h1>
+        <a href="dashboard.php" class="add-btn" style="margin-right: 12px;">Quay lại</a>
         <a href="add-product.php" class="add-btn">+ Thêm sản phẩm mới</a>
         <div class="table-container">
             <table class="product-table">
@@ -53,8 +63,20 @@ $result = $conn->query($sql);
                 </tbody>
             </table>
         </div>
+        <?php if ($total_page > 1): ?>
+        <div class="pagination">
+            <?php if ($page > 1): ?>
+                <a href="?page=<?php echo $page-1; ?>" class="page-btn">&laquo; Trước</a>
+            <?php endif; ?>
+            <?php for ($i = 1; $i <= $total_page; $i++): ?>
+                <a href="?page=<?php echo $i; ?>" class="page-btn<?php if ($i == $page) echo ' active'; ?>"><?php echo $i; ?></a>
+            <?php endfor; ?>
+            <?php if ($page < $total_page): ?>
+                <a href="?page=<?php echo $page+1; ?>" class="page-btn">Sau &raquo;</a>
+            <?php endif; ?>
+        </div>
+        <?php endif; ?>
     </div>
 </main>
-
 </body>
 </html>

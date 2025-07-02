@@ -41,4 +41,10 @@
 .add-btn:hover, .edit-btn:hover { background: #333; color: #fff; }
 .success { color: green; margin-bottom: 16px; }
 .error { color: red; margin-bottom: 16px; }
-body { background: #f4f4f4 !important; } 
+
+main {
+    background: #f4f4f4 !important;
+}
+body {
+    background: #f4f4f4 !important;
+}

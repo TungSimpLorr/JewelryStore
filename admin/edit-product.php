@@ -1,4 +1,5 @@
 <?php
+
 include '../includes/connect.php';
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
@@ -53,7 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Sửa sản phẩm</title>
-    <link rel="stylesheet" href="/JewelryStore/css/style.css">
     <link rel="stylesheet" href="edit-product.css">
 </head>
 <body>
@@ -100,5 +100,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </main>
+
 </body>
 </html>        
