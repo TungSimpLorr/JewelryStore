@@ -18,5 +18,14 @@ $(document).ready(function(){
       autoplayTimeout: 1000,
       autoplayHoverPause: true
     });
- 
+    
+    $(".product-type-list-1").owlCarousel({
+      items: 4,
+      loop: true, 
+      margin: 10, 
+      dots: true, 
+      autoplay: true,
+      autoplayTimeout: 10000,
+      autoplayHoverPause: true 
+    });
 });

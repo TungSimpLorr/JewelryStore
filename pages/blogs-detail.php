@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include '../includes/connect.php';
-include '../includes/header.php';
+
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id <= 0) {
@@ -10,11 +10,12 @@ if ($id <= 0) {
     include '../includes/footer.php'; exit;
 }
 
-$sql = "SELECT bv.tieu_de, ct.noi_dung, ct.hinh_anh, ct.created_at, qtv.ten_quan_tri_vien 
+$sql = "SELECT bv.tieu_de, ct.noi_dung, ct.hinh_anh, ct.created_at, qtv.ho_ten 
         FROM bai_viet bv 
-        JOIN chi_tiet_bai_viet ct ON bv.id = ct.id 
-        JOIN quan_tri_vien qtv ON bv.id_quan_tri_vien = qtv.id_quan_tri_vien 
-        WHERE bv.id = ?";
+        JOIN chi_tiet_bai_viet ct ON bv.id_bai_viet = ct.id_bai_viet 
+        JOIN quan_tri_vien qtv ON bv.id_nguoi_tao = qtv.id_quan_tri 
+        WHERE bv.id_bai_viet = ?";
+
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
@@ -30,7 +31,9 @@ $bv = $result->fetch_assoc();
 <link rel="stylesheet" href="/JewelryStore/css/blog_detail.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+<script src="/Jewelry%20Store/js/main.js"></script>
+<script src="/Jewelry%20Store/js/process.js"></script>
+<?php include '../includes/header.php'; ?>
 <div class="blog-detail">
     <h1 class="blog-title"><?= htmlspecialchars($bv['tieu_de']) ?></h1>
     

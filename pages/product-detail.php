@@ -17,8 +17,9 @@ $product = $result->fetch_assoc();
     <title>Jewelry Store</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://kit.fontawesome.com/3a3ccaffa9.js" crossorigin="anonymous"></script>
-    <script src="../js/jquery-3.7.1.min.js"></script>
-    <script src="../js/main.js"></script>
+   <script src="/Jewelry%20Store/js/jquery-3.7.1.min.js"></script>
+   <script src="/Jewelry%20Store/js/main.js"></script>
+    <script src="/Jewelry%20Store/js/process.js"></script>
 
 </head>
 
@@ -81,21 +82,15 @@ $product = $result->fetch_assoc();
                         </h3>
 
                     </div>
-                    <div class="box-rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <p>5.0 rating</p>
-                    </div>
-                      
                 <div>
                     <input type="hidden" name="id_san_pham" value="<?php echo $product['id_san_pham']; ?>">
-                    <input type="number" name="so_luong" value="1" min="1" style="width:60px;">
+                    <h3>Số lượng: </h3>
+                    <input type="number" name="so_luong" value="1" min="1" style="width:40px; height: 40px; padding-left: 5px; ">
                     <button type="button" onclick="themsanphamvaogio()" class="button">
                         <h3>Thêm vào giỏ hàng</h3>
                     </button>
+                   <h3 style=" color: black; margin-top: 10px; "><a href="/Jewelry%20Store/pages/products.php" >Quay lại mua sắm</a> </h3> 
+                   
                 </div>
  
 
@@ -103,12 +98,12 @@ $product = $result->fetch_assoc();
             </div>
 
         </div>
-        <div class="mg" style="background-color : black; margin-top: 1%;"></div>
+        <div class="mg" style="background-color : black; margin-top: 1%; height: 10px ;"></div>
 
         <div class="box">
             <div class="description">
                 <div class="description-content">
-                    <h3>Description</h3>
+                    <h3>Description: </h3>
                     <hr />
                     <p>
                         <?php
@@ -117,7 +112,26 @@ $product = $result->fetch_assoc();
                     </p>
                     <hr />
                     <h3>Materials:</h3>
-
+                        <?php
+                
+                if ($product) {
+                    echo '<ul class="materials-list">';
+                    echo '<li><strong>Khối lượng:</strong> ' . htmlspecialchars($product['khoi_luong']) . ' g</li>';
+                    echo '<li><strong>Kích thước:</strong> ' . htmlspecialchars($product['kich_thuoc']) . ' mm</li>';
+                    echo '<li><strong>Chất liệu:</strong> ' . htmlspecialchars($product['chat_lieu']) . '</li>';
+                   
+                    $brand_name = '';
+                    if (!empty($product['id_thuong_hieu'])) {
+                        $sql_brand = "SELECT ten_thuong_hieu FROM thuong_hieu WHERE id_thuong_hieu = " . intval($product['id_thuong_hieu']);
+                        $result_brand = $conn->query($sql_brand);
+                        if ($result_brand && $row_brand = $result_brand->fetch_assoc()) {
+                            $brand_name = $row_brand['ten_thuong_hieu'];
+                        }
+                    }
+                    echo '<li><strong>Thương hiệu:</strong> ' . htmlspecialchars($brand_name) . '</li>';
+                    echo '</ul>';
+                }
+                ?>
                 </div>
                 <div class="description-img">
                     <?php

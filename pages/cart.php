@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 $path = realpath(__DIR__ . '/../includes/connect.php');
 include $path;
 
@@ -84,7 +87,7 @@ if (isset($_POST['themvaogiohang'])) {
 
         <div class="basket-bill">
             <h3>TỔNG HÓA ĐƠN: <?php echo number_format($tong_tien); ?> VND.</h3>
-            <div><a href="../pages/basket-detail.php">Hoàn tất đơn hàng</a></div>
+            <div><a href="/Jewelry%20Store/pages/cart-detail.php">Đi đến thanh toán</a></div>
             <a href="../pages/products.php">Tiếp tục mua sắm</a>
         </div>
     </div>

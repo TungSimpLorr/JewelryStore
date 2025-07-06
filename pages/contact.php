@@ -41,6 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/Jewelry%20Store/js/main.js"></script>
+  <script src="/Jewelry%20Store/js/process.js"></script>
 </head>
 <?php include "../pages/cart.php"; ?>
 <body>

@@ -1,3 +1,10 @@
+<?php
+include "includes/connect.php";
+$sql = "select * from san_pham order by id_san_pham desc limit 4";
+$result = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,45 +12,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jewelry Store</title>
-    <link rel="stylesheet" href="/Jewelry%20Store/css/style.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/Jewelry%20Store/css/style.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <script src="https://kit.fontawesome.com/3a3ccaffa9.js" crossorigin="anonymous"></script>
-    <script src="/Jewelry%20Store/js/jquery-3.7.1.min.js"></script>   
+    <script src="/Jewelry%20Store/js/jquery-3.7.1.min.js"></script>
     <script src="/Jewelry%20Store/js/main.js"></script>
+    <script src="/Jewelry%20Store/js/process.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="/Jewelry%20Store/js/owl.js"></script>
-   
-    
 
 </head>
 
 <body>
-    
+
     <?php include "./pages/cart.php"; ?>
-     <div class="container">
-        
+    <div class="container">
+
         <?php include "includes/header.php"; ?>
-       
+
         <main>
-        
+
             <div class="boxcenter">
-       
+
                 <div class="box-banner">
-                     
+
                     <div class="img-banner owl-carousel">
                         <img src="./images/banner/anh-banner-1.png" alt="banner">
                         <img src="./images/banner/anh-banner-2.png" alt="banner">
                         <img src="./images/banner/anh-banner-3.png" alt="banner">
                     </div>
 
-                    <!-- <div class="box-content-banner content-banner">
-                <div class="content-banner">
-                    <h2>Mua sắm tại Jewelry Store</h2>
-                    <h3>Giảm giá 10% cho các hóa đơn trên 5 triệu VND.</h3>
-                </div>
-                <div class="button"><a href="#"></a></div>
-            </div> -->
 
                 </div>
             </div>
@@ -55,11 +56,13 @@
                 <br />
                 <p>Khám phá những sản phẩm bán chạy nhất hiện tại của chúng tôi </p>
             </div>
-          
+
 
             <div class="mg title">
                 <h2>DANH MỤC SẢN PHẨM</h2>
             </div>
+
+
             <div class="box">
                 <div class="product-type-list owl-carousel">
                     <div class="item"><img src="images/products/anh-danh-muc-san-pham-1.PNG">
@@ -79,19 +82,44 @@
                     </div>
                 </div>
             </div>
-       
-             <div class="mg title" id="introduce-page">
+
+
+            <div class="mg title">
+                <h2>SẢN PHẨM MỚI NHẤT</h2>
+            </div>
+            <div class="box">
+                <div class="product-type-list-1 owl-carousel">
+                    <?php
+                    while ($row = $result->fetch_assoc()) {
+                        $products_id = $row["id_san_pham"];
+                        $products_name = $row["ten_san_pham"];
+                        $products_img = htmlspecialchars($row["url_anh_dai_dien"]);
+                        echo '<div class="item"><img src="' . $products_img . '">
+                    <h3 style=" text-align: center;">' . $products_name . '</h3>
+                    <h3 style=" margin-top:10px;"><a href="./pages/product-detail.php?id=' . $products_id . '"  style="text-decoration: none; color:black;">MUA NGAY</a></h3>
+                </div>';
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="mg title" id="introduce-page">
                 <h2>GIỚI THIỆU</h2>
             </div>
-            <div class="introduce-box" >
+            <div class="introduce-box">
                 <div class="introduce-content">
-                    <h2>Nâng Tầm Vẻ Đẹp Với Trang Sức JewelryStory Tinh Hoa Việt Nam Vươn Tầm Thế Giới</h2>
-                    <p>Trong hơn 60 năm, JewelryStory đã kiến tạo những thiết kế trang sức tinh tế, hòa quyện giữa di
-                        sản Việt Nam, kỹ thuật chế tác bậc thầy và sự am hiểu sâu sắc về vẻ đẹp vượt thời gian.
-                        Khởi nguồn từ trái tim Việt Nam, JewelryStory đã khẳng định vị thế trên thị trường trang sức cao
-                        cấp nhờ không ngừng đổi mới công nghệ chế tác, tuyển chọn những vật liệu quý hiếm nhất và đặc
+                    <h2>Nâng Tầm Vẻ Đẹp Với Trang Sức JewelryStory Tinh Hoa Việt Nam Vươn Tầm Thế Giới
+                    </h2>
+                    <p>Trong hơn 60 năm, JewelryStory đã kiến tạo những thiết kế trang sức tinh tế, hòa
+                        quyện giữa di
+                        sản Việt Nam, kỹ thuật chế tác bậc thầy và sự am hiểu sâu sắc về vẻ đẹp vượt
+                        thời gian.
+                        Khởi nguồn từ trái tim Việt Nam, JewelryStory đã khẳng định vị thế trên thị
+                        trường trang sức cao
+                        cấp nhờ không ngừng đổi mới công nghệ chế tác, tuyển chọn những vật liệu quý
+                        hiếm nhất và đặc
                         biệt chú trọng vào từng chi tiết thiết kế độc đáo.
-                        Mỗi tác phẩm trang sức của JewelryStory không chỉ là một món phụ kiện, mà còn là một câu chuyện,
+                        Mỗi tác phẩm trang sức của JewelryStory không chỉ là một món phụ kiện, mà còn là
+                        một câu chuyện,
                         một biểu tượng của sự tinh tế và đẳng cấp Việt Nam.</p>
                     <hr style="width: 50%; margin: 20px auto; border: 1px solid #535252;" />
                     <h3>Khám phá vẻ đẹp vượt thời gian cùng JewelryStory.</h3>
@@ -103,11 +131,11 @@
 
             </div>
 
-             </main>
+        </main>
 
-       <?php include "includes/footer.php"; ?>
+        <?php include "includes/footer.php"; ?>
     </div>
- 
+
 
 </body>
 
