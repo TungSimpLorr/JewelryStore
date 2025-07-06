@@ -10,18 +10,10 @@ if ($id <= 0) {
     include '../includes/footer.php'; exit;
 }
 
-<<<<<<< HEAD
 $sql = "SELECT bv.tieu_de, ct.noi_dung, ct.hinh_anh, ct.created_at, qtv.ho_ten 
         FROM bai_viet bv 
         JOIN chi_tiet_bai_viet ct ON bv.id_bai_viet = ct.id_bai_viet 
         JOIN quan_tri_vien qtv ON bv.id_nguoi_tao = qtv.id_quan_tri 
-=======
-
-$sql = "SELECT bv.tieu_de, bv.ngay_dang, ct.noi_dung, ct.hinh_anh, qtv.ho_ten AS ten_quan_tri_vien
-        FROM bai_viet bv
-        JOIN chi_tiet_bai_viet ct ON bv.id_bai_viet = ct.id_bai_viet
-        JOIN quan_tri_vien qtv ON bv.id_nguoi_tao = qtv.id_quan_tri
->>>>>>> 15604aa5f0caad861da4fa98461a33ae102b4a2e
         WHERE bv.id_bai_viet = ?";
 
 $stmt = $conn->prepare($sql);
@@ -35,8 +27,8 @@ if (!$result->num_rows) {
 $bv = $result->fetch_assoc();
 ?>
 
-<link rel="stylesheet" href="/Jewelry Store/css/style.css">
-<link rel="stylesheet" href="/Jewelry Store/css/blog_detail.css">
+<link rel="stylesheet" href="/JewelryStore/css/style.css">
+<link rel="stylesheet" href="/JewelryStore/css/blog_detail.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/Jewelry%20Store/js/main.js"></script>
@@ -47,7 +39,7 @@ $bv = $result->fetch_assoc();
     
     <div class="blog-meta">
         <i class="fas fa-user"></i> Người đăng: <?= htmlspecialchars($bv['ten_quan_tri_vien'] ?? 'Không rõ') ?> |
-        <i class="fas fa-calendar-alt"></i> Ngày đăng: <?= date("d/m/Y", strtotime($bv['ngay_dang'])) ?>
+        <i class="fas fa-calendar-alt"></i> Ngày đăng: <?= date("d/m/Y", strtotime($bv['created_at'])) ?>
     </div>
 
     <div class="blog-content">
@@ -57,8 +49,8 @@ $bv = $result->fetch_assoc();
 
         if (!empty($bv['hinh_anh'])) {
             echo '<div class="blog-middle-image-wrapper">';
-           
-            echo '<img class="blog-middle-image" src="/Jewelry Store/images/blog-detail/' . htmlspecialchars($bv['hinh_anh']) . '" alt="Ảnh minh họa">';
+            echo '<img class="blog-middle-image" src="/JewelryStore/images/blogs-detail/' . htmlspecialchars($bv['hinh_anh']) . '" alt="Ảnh giữa bài">';
+            echo '<img class="blog-middle-image" src="/JewelryStore/images/blog-detail/' . htmlspecialchars($bv['hinh_anh']) . '" alt="Ảnh giữa bài">';
             echo '</div>';
         }
 

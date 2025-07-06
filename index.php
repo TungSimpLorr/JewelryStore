@@ -66,19 +66,20 @@ $result = $conn->query($sql);
             <div class="box">
                 <div class="product-type-list owl-carousel">
                     <div class="item"><img src="images/products/anh-danh-muc-san-pham-1.PNG">
-                        <h3>NHẨN </h3>
+                        <h3 style="width:100px ; height : 40px; margin-bottom : 100px; background "> <a href="/Jewelry%20Store/pages/products.php?type=Nhẫn&material=" style=" text-decoration: none; color: black; "> NHẨN </a></h3>
                     </div>
                     <div class="item"><img src="images/products/anh-danh-muc-san-pham-2.PNG">
-                        <h3>VÒNG TAY </h3>
+                        <h3> <a href="/Jewelry%20Store/pages/products.php?type=Vòng+tay&material=" style=" text-decoration: none; color: black; "> VÒNG TAY </a></h3>
                     </div>
                     <div class="item"><img src="images/products/anh-danh-muc-san-pham-3.PNG">
-                        <h3>ĐỒNG HỒ </h3>
+                        <h3> <a href="/Jewelry%20Store/pages/products.php?type=Đồng+hồ&material=" style=" text-decoration: none; color: black; "> ĐỒNG HỒ </a></h3>
                     </div>
                     <div class="item"><img src="images/products/anh-danh-muc-san-pham-4.PNG">
-                        <h3>DÂY CHUYỀN/VÒNG CỔ</h3>
+                        <h3> <a href="/Jewelry%20Store/pages/products.php?type=Vòng+cổ&material=" style=" text-decoration: none; color: black; ">DÂY CHUYỀN/VÒNG CỔ
+                            </a></h3>
                     </div>
                     <div class="item"><img src="images/products/anh-danh-muc-san-pham-5.PNG">
-                        <h3>KHUYÊN TAI </h3>
+                        <h3> <a href="/Jewelry%20Store/pages/products.php?type=Hoa+tai&material=" style=" text-decoration: none; color: black; "> HOA TAI </a></h3>
                     </div>
                 </div>
             </div>

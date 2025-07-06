@@ -48,11 +48,7 @@ if (!empty($_GET['price'])) {
         $where[] = "sp.gia_san_pham >= 10000000";
     }
 }
-<<<<<<< HEAD
 // Lọc theo categoryId nếu có
-=======
-// Lọc theo categoryId 
->>>>>>> 15604aa5f0caad861da4fa98461a33ae102b4a2e
 if ($categoryId > 0) {
     $where[] = "sp.id_loai_san_pham = ?";
     $params[] = $categoryId;
@@ -63,12 +59,8 @@ $whereClause = $where ? "WHERE " . implode(" AND ", $where) : "";
 // Đếm tổng số sản phẩm
 $countSql = "SELECT COUNT(*) AS total FROM san_pham sp $whereClause";
 $countStmt = $conn->prepare($countSql);
-<<<<<<< HEAD
 if ($params)
     $countStmt->bind_param($typestr, ...$params);
-=======
-if ($params) $countStmt->bind_param($typestr, ...$params);
->>>>>>> 15604aa5f0caad861da4fa98461a33ae102b4a2e
 $countStmt->execute();
 $totalResult = $countStmt->get_result()->fetch_assoc();
 $totalProducts = $totalResult['total'];
@@ -91,7 +83,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 ?>
 
-<<<<<<< HEAD
 <head>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product.css">
@@ -204,88 +195,3 @@ $result = $stmt->get_result();
 
 
 </body>
-=======
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/product.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<div class="content">
-    <h2 class="product-section-title">
-    <?php echo $categoryName ? htmlspecialchars($categoryName) : "Tất cả sản phẩm"; ?>
-</h2>
-<div style="display:flex; gap:32px; align-items:flex-start; margin-top: 20px;">
-    <!-- Sidebar bộ lọc -->
-    <form method="GET" class="filter-sidebar">
-        <div class="filter-block">
-            <div class="filter-title">Khoảng giá</div>
-            <label class="filter-radio"><input type="radio" name="price" value="1-5" <?php if(isset($_GET['price']) && $_GET['price']=='1-5') echo 'checked'; ?>> 1-5 triệu</label>
-            <label class="filter-radio"><input type="radio" name="price" value="5-10" <?php if(isset($_GET['price']) && $_GET['price']=='5-10') echo 'checked'; ?>> 5-10 triệu</label>
-            <label class="filter-radio"><input type="radio" name="price" value="10+" <?php if(isset($_GET['price']) && $_GET['price']=='10+') echo 'checked'; ?>> Trên 10 triệu</label>
-        </div>
-        <div class="filter-block">
-            <div class="filter-title">Loại sản phẩm</div>
-            <select name="type" class="filter-select">
-                <option value="">Tất cả</option>
-                <?php
-                $types = ['Vòng cổ', 'Nhẫn', 'Vòng tay', 'Đồng hồ', 'Hoa tai'];
-                foreach ($types as $type) {
-                    $selected = (isset($_GET['type']) && $_GET['type'] == $type) ? 'selected' : '';
-                    echo "<option value=\"$type\" $selected>$type</option>";
-                }
-                ?>
-            </select>
-        </div>
-        <div class="filter-block">
-            <div class="filter-title">Chất liệu</div>
-            <select name="material" class="filter-select">
-                <option value="">Tất cả</option>
-                <?php
-                $materials = ['Vàng', 'Bạc', 'Kim cương', 'Ngọc trai'];
-                foreach ($materials as $mat) {
-                    $selected = (isset($_GET['material']) && $_GET['material'] == $mat) ? 'selected' : '';
-                    echo "<option value=\"$mat\" $selected>$mat</option>";
-                }
-                ?>
-            </select>
-        </div>
-        <button type="submit" class="filter-btn">Lọc</button>
-    </form>
-    <!-- Danh sách sản phẩm -->
-        <div style="flex:1;">
-            <div class="product-grid">
-                <?php
-                if ($result && $result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<div class="product-card">';
-                        echo '<img class="product-image" src="' . htmlspecialchars($row['url_anh_dai_dien']) . '" alt="' . htmlspecialchars($row['ten_san_pham']) . '">';
-                        echo '<h3 class="product-title">' . htmlspecialchars($row['ten_san_pham']) . '</h3>';
-                        echo '<p class="product-brand">Thương hiệu: ' . htmlspecialchars($row['ten_thuong_hieu']) . '</p>'; 
-                        echo '<p class="product-price">' . number_format($row['gia_san_pham'], 0, ',', '.') . ' đ</p>';
-                        echo '<a class="product-link" href="product-detail.php?id=' . $row['id_san_pham'] . '">Xem chi tiết &raquo;</a>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo "<p style='color:red;'>Không có sản phẩm nào.</p>";
-                }
-                ?>
-           </div>
-            <div class="pagination">
-                <?php
-                $queryStr = $_GET;
-                foreach(['page'] as $unset) unset($queryStr[$unset]);
-                $baseUrl = '?' . http_build_query($queryStr);
-                for ($i = 1; $i <= $totalPages; $i++) {
-                    $url = $baseUrl . ($baseUrl ? '&' : '?') . "page=$i";
-                    if ($i == $page) {
-                        echo '<span class="current-page">' . $i . '</span>';
-                    } else {
-                        echo '<a class="page-link" href="' . $url . '">' . $i . '</a>';
-                    }
-                }
-                ?>
-            </div>
-        </div> 
-    </div> 
-</div> 
-<?php include "../includes/footer.php"; ?>
->>>>>>> 15604aa5f0caad861da4fa98461a33ae102b4a2e

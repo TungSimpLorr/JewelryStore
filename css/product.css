@@ -153,42 +153,6 @@
     font-size: 15px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
-<<<<<<< HEAD
-=======
-}
-.filter-radio input[type="radio"] {
-    accent-color: #222;
-    margin-right: 8px;
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-}
-.filter-select {
-    width: 100%;
-    padding: 7px 10px;
-    border-radius: 6px;
-    border: 1px solid #bbb;
-    font-size: 15px;
-    margin-bottom: 2px;
-    font-family: 'Times New Roman', Times, serif;
-}
-.filter-btn {
-    background: #222;
-    color: #fffbe6;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 0;
-    width: 100%;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 8px;
-    transition: background 0.2s;
-    font-family: 'Times New Roman', Times, serif;
-}
-.filter-btn:hover {
-    background: #444;
->>>>>>> 15604aa5f0caad861da4fa98461a33ae102b4a2e
 }
 .filter-radio input[type="radio"] {
     accent-color: #222;
