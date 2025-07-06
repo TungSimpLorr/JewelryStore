@@ -8,5 +8,9 @@ if ($id > 0) {
     $stmt->execute();
 }
 header('Location: manage-products.php');
+<<<<<<< HEAD
 
+=======
+exit;
+>>>>>>> 15604aa5f0caad861da4fa98461a33ae102b4a2e
 ?> 
