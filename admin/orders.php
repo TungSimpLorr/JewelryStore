@@ -48,7 +48,7 @@ if (isset($_GET['action']) && isset($_GET['id'])) {
                     while($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td>#<?php echo $row['id_don_hang']; ?></td>
-                        <td><?php echo htmlspecialchars($row['ho_ten']); ?></td>
+                        <td><?php echo !empty($row['ho_ten_khach_hang']) ? htmlspecialchars($row['ho_ten_khach_hang']) : ''; ?></td>
                         <td><?php echo htmlspecialchars($row['email']); ?></td>
                         <td><?php echo number_format($row['tong_tien'],0,',','.'); ?> đ</td>
                         <td><?php
