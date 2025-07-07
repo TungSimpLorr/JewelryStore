@@ -138,31 +138,36 @@
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
-.blog-form {
-    max-width: 520px;
+/* ====== Form Chung Cho Thêm Bài Viết & Sản Phẩm ====== */
+.blog-form, .add-product-form {
+    max-width: 640px;
     margin: 0 auto;
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);
     padding: 36px 32px 28px 32px;
     font-size: 1.08rem;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
+    border: 1px solid #ccc;
+    font-family: 'Times New Roman', Times, serif;
 }
-.blog-form h2 {
-    font-size: 2rem;
-    color: #222;
+
+/* ====== Tiêu đề form ====== */
+.blog-form h2, .add-product-form h2,
+.blog-form .add-product-title, .add-product-form .add-product-title {
+    font-size: 32px;
+    color: #000;
     font-weight: bold;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: 1.5px;
+    font-family: 'Times New Roman', Times, serif;
 }
-.blog-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-.blog-form label {
+
+/* ====== Label & Input ====== */
+.blog-form label, .add-product-form label {
     display: flex;
     flex-direction: column;
     font-weight: 500;
@@ -170,160 +175,108 @@
     margin-bottom: 2px;
     gap: 6px;
 }
+
 .blog-form input[type="text"],
 .blog-form input[type="number"],
 .blog-form textarea,
-.blog-form select {
-    padding: 8px 12px;
+.blog-form select,
+.add-product-form input[type="text"],
+.add-product-form input[type="number"],
+.add-product-form textarea,
+.add-product-form select {
+    padding: 10px 14px;
     border: 1.5px solid #bbb;
-    border-radius: 7px;
+    border-radius: 8px;
     font-size: 1rem;
-    margin-top: 2px;
     background: #fafafa;
-    transition: border 0.2s;
+    transition: all 0.25s ease;
+    font-family: 'Times New Roman', Times, serif;
 }
-.blog-form input[type="text"]:focus,
-.blog-form input[type="number"]:focus,
+
+.blog-form input:focus,
 .blog-form textarea:focus,
-.blog-form select:focus {
-    border: 1.5px solid #219150;
+.blog-form select:focus,
+.add-product-form input:focus,
+.add-product-form textarea:focus,
+.add-product-form select:focus {
+    border-color: #219150;
     outline: none;
     background: #fff;
 }
-.blog-form textarea {
+
+/* ====== Textarea Resize Hạn Chế ====== */
+textarea {
     resize: vertical;
-    min-height: 70px;
-    max-height: 250px;
+    min-height: 80px;
+    max-height: 300px;
 }
-.blog-form .checkbox-label {
-    flex-direction: row;
+
+/* ====== Checkbox ====== */
+.checkbox-label {
+    flex-direction: row !important;
     align-items: center;
     gap: 8px;
     font-weight: 400;
-    margin-top: 8px;
 }
-.blog-form .form-actions {
+
+/* ====== Nút Submit / Reset / Quay lại ====== */
+.blog-form .form-actions, .add-product-form .form-actions {
     display: flex;
     justify-content: center;
     gap: 18px;
-    margin-top: 18px;
+    margin-top: 16px;
 }
-.blog-form .add-btn, .blog-form .edit-btn {
-    min-width: 150px;
-    font-size: 1.08rem;
+
+/* Nút chung cho cả button và link */
+.blog-form .add-btn,
+.add-product-form .add-btn,
+.blog-form .edit-btn,
+.add-product-form .edit-btn,
+a.button-link {
+    min-width: 160px;
+    font-size: 1rem;
     padding: 12px 0;
     border-radius: 10px;
-    background: #111;
+    background: #000;
     color: #fff;
     border: none;
     font-weight: bold;
-    transition: background 0.2s;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'Times New Roman', Times, serif;
     display: inline-block;
+    text-decoration: none;
+    line-height: 1.2;
+    vertical-align: middle;
+    box-sizing: border-box;
 }
-.blog-form .add-btn:hover, .blog-form .edit-btn:hover {
-    background: #444;
+
+
+/* Hover cho các nút */
+.blog-form .add-btn:hover, .add-product-form .add-btn:hover,
+.blog-form .edit-btn:hover, .add-product-form .edit-btn:hover,
+a.button-link:hover {
+    background: #219150;
     color: #fff;
+    opacity: 1;
 }
-.blog-form .success {
+
+/* ====== Thông báo thành công / lỗi ====== */
+.blog-form .success, .add-product-form .success {
     color: #219150;
     background: #eafaf1;
     border: 1px solid #b6e2c7;
     padding: 8px 12px;
     border-radius: 7px;
-    margin-bottom: 16px;
     text-align: center;
 }
-.blog-form .error {
+
+.blog-form .error, .add-product-form .error {
     color: #e74c3c;
     background: #fff0f0;
     border: 1px solid #f5b7b1;
     padding: 8px 12px;
     border-radius: 7px;
-    margin-bottom: 16px;
     text-align: center;
-}
-
-.add-product-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #222;
-    font-weight: bold;
-    margin-bottom: 24px;
-    letter-spacing: 1px;
-}
-.add-product-form {
-    max-width: 520px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 14px;
-    box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-    padding: 36px 32px 28px 32px;
-    font-size: 1.08rem;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-.add-product-form label {
-    display: flex;
-    flex-direction: column;
-    font-weight: 500;
-    color: #222;
-    margin-bottom: 2px;
-    gap: 6px;
-}
-.add-product-form input[type="text"],
-.add-product-form input[type="number"],
-.add-product-form textarea,
-.add-product-form select {
-    padding: 8px 12px;
-    border: 1.5px solid #bbb;
-    border-radius: 7px;
-    font-size: 1rem;
-    margin-top: 2px;
-    background: #fafafa;
-    transition: border 0.2s;
-}
-.add-product-form input[type="text"]:focus,
-.add-product-form input[type="number"]:focus,
-.add-product-form textarea:focus,
-.add-product-form select:focus {
-    border: 1.5px solid #219150;
-    outline: none;
-    background: #fff;
-}
-.add-product-form textarea {
-    resize: vertical;
-    min-height: 70px;
-    max-height: 250px;
-}
-.add-product-form .checkbox-label {
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-    font-weight: 400;
-    margin-top: 8px;
-}
-.add-product-form .form-actions {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 18px;
-}
-.add-product-form .add-btn, .add-product-form .edit-btn {
-    min-width: 150px;
-    font-size: 1.08rem;
-    padding: 12px 0;
-    border-radius: 10px;
-    background: #111;
-    color: #fff;
-    border: none;
-    font-weight: bold;
-    transition: background 0.2s;
-    text-align: center;
-    display: inline-block;
-}
-.add-product-form .add-btn:hover, .add-product-form .edit-btn:hover {
-    background: #444;
-    color: #fff;
 }
