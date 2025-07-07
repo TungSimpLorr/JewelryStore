@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Thêm sản phẩm mới</title>
-    <link rel="stylesheet" href="add-products.css">
+      <link rel="stylesheet" href="/Jewelry%20Store/css/admin.css" />
 </head>
 <body>
 <?php

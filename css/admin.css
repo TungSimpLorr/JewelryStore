@@ -1,423 +1,139 @@
-/* Quản lý đơn hàng - Admin */
-.orders-table {
+/* ====== Container & Layout ====== */
+.container, .boxcenter {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+.table-container {
+    margin-top: 24px;
+}
+
+/* ====== Tiêu đề ====== */
+.page-title, .title, h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #000;
+    font-weight: bold;
+    margin: 36px 0 24px 0;
+    letter-spacing: 2px;
+}
+
+/* ====== Bảng ====== */
+.product-table, .orders-table, .contact-table, .blog-table {
     width: 100%;
     border-collapse: collapse;
-    background: #000;
-    margin: 40px 0;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
 }
-.orders-table th, .orders-table td {
+.product-table th, .product-table td,
+.orders-table th, .orders-table td,
+.contact-table th, .contact-table td,
+.blog-table th, .blog-table td {
     border: 1px solid #333;
     padding: 12px 10px;
     text-align: center;
-    color: #fff;
+    color: #000;
 }
-.orders-table th {
+.product-table th, .orders-table th, .contact-table th, .blog-table th {
     background: #000;
     color: #fff;
     font-weight: bold;
     border-bottom: 2px solid #333;
 }
+.product-table td img, .blog-table td img {
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* ====== Nút ====== */
+.add-btn, .action-btn, .dashboard-btn {
+    display: inline-block;
+    padding: 7px 18px;
+    border-radius: 5px;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 12px;
+    margin-right: 8px;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.add-btn:hover, .action-btn:hover, .dashboard-btn:hover {
+    background: #219150;
+    color: #fff;
+}
+.delete-btn {
+    background: #e74c3c;
+}
+.delete-btn:hover {
+    background: #b30000;
+}
+.edit-btn {
+    background: #219150;
+}
+.edit-btn:hover {
+    background: #176d3b;
+}
+
+/* ====== Trạng thái đơn hàng ====== */
 .status {
     padding: 4px 12px;
     border-radius: 6px;
     font-weight: bold;
     font-size: 1em;
+    display: inline-block;
 }
-.status.done { background: #000; color: #fff; border: 1px solid #333; }
-.status.cancel { background: #000; color: #fff; border: 1px solid #333; }
+.status.done { background: #219150; color: #fff; border: 1px solid #333; }
+.status.cancel { background: #e74c3c; color: #fff; border: 1px solid #333; }
 .status.pending { background: #000; color: #fff; border: 1px solid #333; }
-.action-btn {
-    padding: 6px 14px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 0 2px;
-    text-decoration: none;
-    display: inline-block;
-}
-.done-btn { background: #000; border: 1px solid #333; }
-.cancel-btn { background: #000; border: 1px solid #333; }
-.table-container { overflow-x: auto; } 
+.status.approved { background: #2980b9; color: #fff; border: 1px solid #333; }
 
-/* Quản lý sản phẩm - Admin */
-.product-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    margin: 40px 0;
-    box-shadow: 0 2px 12px rgba(212,175,55,0.08);
-}
-.product-table th, .product-table td {
-    border: 1px solid #eee;
-    padding: 12px 10px;
-    text-align: center;
-}
-.product-table th {
-    background: #000;
-    color: #fff;
-    font-weight: bold;
-}
-.product-table td img {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-.action-btn {
-    padding: 6px 14px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 0 2px;
-}
-.edit-btn { background: #067b54; }
-.delete-btn { background: #d9534f; }
-.add-btn {
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    margin: 30px 0 10px 0;
-    transition: background 0.2s;
-}
-.add-btn:hover { background: #333; }
-.table-container { overflow-x: auto; }
-.page-title {
-    text-align: center;
-    font-size: 2.2rem;
-    font-weight: bold;
-    margin: 32px 0 24px 0;
-    letter-spacing: 2px;
-    color: #111;
-}
-/* === CSS PHÂN TRANG ĐẸP NỀN ĐEN === */
-.pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    margin: 40px 0 20px 0;
-    padding: 0;
-}
-.page-btn {
-    padding: 8px 16px;
-    display: inline-block;
-    width: 50px;
-    border: 2px solid #000;
-    border-radius: 8px;
-    background: #000;
-    color: #fff !important;
-    text-align: center;
-    text-decoration: none !important;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    cursor: pointer;
-}
-.page-btn:hover, .page-btn.active {
-    background: #811f1f;
-    color: #000 !important;
-    border-color: #432020;
-    text-decoration: none !important;
-}
-.page-btn.active {
-    cursor: default;
-}
-
-/* Sửa sản phẩm - Admin */
-.container {
-    max-width: 600px;
-    margin: 40px auto;
-    background: #fff;
-    border: 1.5px solid #111;
-    border-radius: 10px;
-    padding: 32px 28px 24px 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.add-product-form label {
-    display: block;
-    margin-bottom: 18px;
-    font-weight: 500;
-    color: #222;
-}
-
-.add-product-form input[type="text"],
-.add-product-form input[type="number"],
-.add-product-form select,
-.add-product-form textarea {
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    margin-top: 6px;
-    font-size: 15px;
-    background: #fff;
-    color: #222;
-}
-
-.add-product-form textarea {
-    resize: vertical;
-}
-
-.add-product-form .checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 18px;
-}
-
-.add-product-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.add-product-form .form-actions {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-top: 18px;
-}
-
-.box-button
-{  
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.add-btn, .edit-btn {
-    min-width: 120px;
-    padding: 10px 0;
-    font-size: 15px;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    font-weight: bold;
-    margin: 0;
-    line-height: 1;
-    border: none;
-    height: 40px;
-    box-sizing: border-box;
-  
-}
-
-.add-btn {
-    background: #111;
-    color: #fff;
-    cursor: pointer;
-    transition: background 0.2s;
-    border: 1.5px solid #bbb;
-}
-.add-btn:hover {
-    background: #333;
-}
-
-.edit-btn {
-    background: #111;
-    color: #fff;
-    border: 1.5px solid #bbb;
-    text-decoration: none;
-    transition: background 0.2s, color 0.2s;
-}
-.edit-btn:hover {
-    background: #111;
-    color: #fff;
-}
-
-.success { color: green; margin-bottom: 16px; }
-.error { color: red; margin-bottom: 16px; }
-
-.admin-dashboard {
-    background: #f4f4f4 !important;
-    width: 100%;
-    height: auto;
-}
-
-.add-product-form input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: black;
-    margin-left: 6px;
-} 
-
-/* Sửa bài viết - Admin */
-.blog-form { max-width: 600px; margin: 40px auto; background: #fff; border: 1px solid #eee; border-radius: 10px; padding: 32px 28px 24px 28px; box-shadow: 0 2px 12px rgba(212,175,55,0.08); }
-.blog-form h2 { text-align: center; margin-bottom: 30px; font-weight: bold; color: #111; }
-.blog-form label { display: block; margin-bottom: 18px; font-weight: 500; color: #222; }
-.blog-form input[type="text"], .blog-form textarea { width: 100%; padding: 8px 10px; border: 1px solid #bbb; border-radius: 4px; margin-top: 6px; font-size: 15px; background: #fff; color: #222; }
-.blog-form input[type="file"] {
-    width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    margin-top: 6px; 
-    font-size: 15px; 
-    background: #fff; 
-    color: #222;
-    cursor: pointer;
-}
-.blog-form input[type="file"]:hover {
-    border-color: #000;
-}
-.blog-form textarea { resize: vertical; }
-.blog-form .checkbox-label { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
-.blog-form input[type="checkbox"] { width: 18px; height: 18px; accent-color: #111; margin-left: 6px; }
-.blog-form .form-actions { display: flex; justify-content: center; gap: 16px; margin-top: 18px; }
-.add-btn, .edit-btn {
-    width: 110px;
-    height: 34px;
-    font-size: 14px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background 0.2s;
-    text-decoration: none;
-}
-.add-btn:hover, .edit-btn:hover { background: #000000; color: #fff; }
-.success { color: green; margin-bottom: 16px; }
-.error { color: red; margin-bottom: 16px; }
-
-main {
-    background: #f4f4f4 !important;
-}
-body {
-    background: #f4f4f4 !important;
-}
-
-/* Thêm bài viết - Admin */
-.blog-form { 
-    max-width: 520px; 
-    margin: 48px auto; 
-    background: #fff; 
-    border: 2px solid #111;
-    border-radius: 16px;
-    padding: 38px 32px 28px 32px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10); 
+/* ====== Responsive ====== */
+@media (max-width: 900px) {
+    .container, .boxcenter {
+        padding: 10px 2vw;
     }
-.blog-form h2 {
-    text-align: center;
-    margin-bottom: 32px;
+    .page-title, .title, h2 {
+        font-size: 28px;
+    }
+    .product-table th, .product-table td,
+    .orders-table th, .orders-table td,
+    .contact-table th, .contact-table td,
+    .blog-table th, .blog-table td {
+        padding: 8px 4px;
+        font-size: 14px;
+    }
+    .add-btn, .action-btn, .dashboard-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}
+
+/* ====== Một số class bổ sung cho đồng bộ ====== */
+.dashboard-value {
+    font-size: 2.5em;
     font-weight: bold;
-    color: #111;
-    font-size: 2rem;
-    letter-spacing: 1px;
-}
-.blog-form label {
-    display: block; 
-    margin-bottom: 10px;
-    font-weight: 600; 
-    color: #222; 
-    font-size: 1.08rem;
-}
-.blog-form input[type="text"], .blog-form textarea { 
-    width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid #bbb;
-    border-radius: 7px;
-    margin-top: 6px; 
-    font-size: 1rem; 
-    background: #fff; 
-    color: #222; 
-    transition: border 0.2s;
-}
-.blog-form input[type="text"]:focus, .blog-form textarea:focus {
-    border-color: #111;
-    outline: none;
-}
-.blog-form input[type="file"] {
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    background: #fff; 
-    color: #222;
-    cursor: pointer;
-    font-size: 1rem; 
-}
-.blog-form input[type="file"]:hover {
-    border-color: #000;
-}
-.blog-form textarea {
-    resize: vertical; 
-    min-height: 90px;
-}
-.blog-form .checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 18px; 
-    font-size: 1rem;
-}
-.blog-form input[type="checkbox"] {
-    width: 18px; 
-    height: 18px;
-    accent-color: #111;
-    margin-left: 6px; 
-}
-.blog-form .form-actions {
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-    margin-top: 24px; 
-}
-.add-btn, .edit-btn {
-    min-width: 120px;
-    height: 40px;
-    font-size: 1.08rem;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    background: #000;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: background 0.18s, color 0.18s;
-    text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-.add-btn:hover, .edit-btn:hover {
-    background: #fff;
     color: #000;
-    border: 2px solid #000;
+    margin-bottom: 8px;
 }
-.success { 
-    color: #067b54; 
-    margin-bottom: 16px; 
+.dashboard-label {
+    font-size: 1.1em;
+    color: #333;
+}
+.dashboard-box {
+    background: #fff;
+    border: 2px solid #222;
+    border-radius: 18px;
+    padding: 32px 0 18px 0;
+    width: 320px;
     text-align: center;
-    font-weight: 600;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
-.error { 
-    color: #d9534f;
-    margin-bottom: 16px; 
-    text-align: center;
-    font-weight: 600;
-}
-body { 
-    background: #ededed !important;
- } 

@@ -82,7 +82,7 @@ function updateUserIcon(isLoggedIn, username = '') {
 
                 <button type="button" onclick="kiemtrataikhoan()">Đăng nhập</button>
                 <div class="footer">
-                    Bạn chưa có tài khoản ? <a href="#">Tạo tài khoản</a>
+                    Bạn chưa có tài khoản ? <a href="/Jewelry%20Store/pages/register.php">Tạo tài khoản</a>
                 </div>
             </form>
         `;

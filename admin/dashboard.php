@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/admin.css">
     <title>Admin Dashboard</title>
     <style>
         .dashboard-box {
@@ -73,7 +74,7 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body >
+<body>
 <?php
 include '../includes/connect.php';
 // Lấy số liệu
@@ -85,15 +86,16 @@ $sql_dh = "SELECT COUNT(*) as total FROM don_hang";
 $result_dh = $conn->query($sql_dh);
 $total_dh = $result_dh ? $result_dh->fetch_assoc()['total'] : 0;
 
-$result = $conn->query("SELECT SUM(tong_tien) AS total FROM don_hang WHERE trang_thai_don_hang = 'hoan_thanh'");
+$result = $conn->query("SELECT SUM(tong_tien) AS total FROM don_hang WHERE trang_thai_don_hang = 'da_giao'");
 $total_dt = $result ? $result->fetch_assoc()['total'] : 0;
 ?>
 <main>
     <div class="container">
         <div style="display:flex; justify-content:center; gap:32px; margin:36px 0 18px 0;">
-            <a href="/Jewelry%20Store/admin/manage-products.php" class="dashboard-btn">Quản lý sản phẩm</a>
-            <a href="/Jewelry%20Store/admin/manage-blogs.php" class="dashboard-btn">Quản lý bài viết</a>
-            <a href="/Jewelry%20Store/admin/orders.php" class="dashboard-btn">Quản lý đơn hàng</a>
+            <a href="manage-products.php" class="dashboard-btn">Quản lý sản phẩm</a>
+            <a href="manage-blogs.php" class="dashboard-btn">Quản lý bài viết</a>
+            <a href="orders.php" class="dashboard-btn">Quản lý đơn hàng</a>
+            <a href="manage-contact.php" class="dashboard-btn">Quản lý liên hệ</a>
         </div>
         <div class="boxcenter" style="justify-content:center;gap:40px;margin-top:40px;">
             <div class="dashboard-box">

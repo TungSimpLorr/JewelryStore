@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Sửa sản phẩm</title>
-    <link rel="stylesheet" href="edit-product.css">
+      <link rel="stylesheet" href="/Jewelry%20Store/css/admin.css" />
 </head>
 <body>
 <main>

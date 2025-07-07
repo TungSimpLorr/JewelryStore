@@ -20,16 +20,21 @@ if(isset($_POST['kiemtrataikhoan'])) {
 $tennguoidung = $_POST['tennguoidung'];
 $matkhau = $_POST['matkhau'];
 
-$sql_user = "SELECT * FROM nguoi_dung WHERE ten_dang_nhap = '$tennguoidung' AND mat_khau = '$matkhau'";
-$result_user = $conn->query($sql_user);
+$sql_user = "SELECT * FROM nguoi_dung WHERE ten_dang_nhap = ?";
+$stmt_user = $conn->prepare($sql_user);
+$stmt_user->bind_param("s", $tennguoidung);
+$stmt_user->execute();
+$result_user = $stmt_user->get_result();
 $user_account = $result_user->fetch_assoc();
 
-
-$sql_admin = "SELECT * FROM quan_tri_vien WHERE ten_dang_nhap = '$tennguoidung' AND mat_khau = '$matkhau'";
-$result_admin = $conn->query($sql_admin);
+$sql_admin = "SELECT * FROM quan_tri_vien WHERE ten_dang_nhap = ?";
+$stmt_admin = $conn->prepare($sql_admin);
+$stmt_admin->bind_param("s", $tennguoidung);
+$stmt_admin->execute();
+$result_admin = $stmt_admin->get_result();
 $admin_account = $result_admin->fetch_assoc();
 
-if ($user_account) {
+if ($user_account && password_verify($matkhau, $user_account['mat_khau'])) {
  
     $_SESSION['user_logged_in'] = true;
     $_SESSION['user_id'] = $user_account['id_nguoi_dung'];
@@ -58,7 +63,10 @@ if ($user_account) {
     echo json_encode(['success' => true, 'message' => 'Đăng nhập thành công!', 'user_type' => 'user']);
     exit();
     
-} elseif ($admin_account) {
+} elseif ($admin_account && (
+    password_verify($matkhau, $admin_account['mat_khau']) ||
+    $matkhau === $admin_account['mat_khau'] 
+)) {
   
     $_SESSION['user_logged_in'] = true;
     $_SESSION['user_id'] = $admin_account['id_quan_tri'];

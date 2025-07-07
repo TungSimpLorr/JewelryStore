@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Sửa bài viết</title>
-    <link rel="stylesheet" href="edit-blog.css">
+          <link rel="stylesheet" href="/Jewelry%20Store/css/admin.css" />
 
 </head>
 <body>

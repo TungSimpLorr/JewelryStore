@@ -55,6 +55,8 @@ create table `nguoi_dung` (
   primary key (`id_nguoi_dung`)
 ) engine=innodb default charset=utf8mb4 collate=utf8mb4_unicode_ci;
 
+
+
 -- bang admin
 create table `quan_tri_vien` (
   `id_quan_tri` int(11) not null auto_increment,
@@ -67,9 +69,10 @@ create table `quan_tri_vien` (
 ) engine=innodb default charset=utf8mb4 collate=utf8mb4_unicode_ci;
 
 insert into `quan_tri_vien` (`id_quan_tri`, `ten_dang_nhap`, `mat_khau`, `email`, `ho_ten`, `quyen_han`) values
-(1, 'tungnguyen', '15072005', 'tungnguyen@example.com', 'Nguyễn Thanh Tùng', 'admin'),
-(2, 'caotran', '11072005', 'caotran@example.com', 'Trần Đăng Cao', 'admin'),
-(3, 'abc', '11062005', 'caothi@example.com', 'Trần Thị Cao', 'admin');
+(1, 'tungnguyen', '15072005', 'tungnguyen@gmail.com', 'Nguyễn Thanh Tùng', 'admin'),
+(2, 'caotran', '11072005', 'caotran@gmail.com', 'Trần Đăng Cao', 'admin'),
+(3, 'abc', '11062005', 'caothi@gmail.com', 'Trần Thị Cao', 'admin');
+
 -- bang gio hang 
 create table  `gio_hang` (
   `id_gio_hang` int(11) not null auto_increment,
@@ -511,18 +514,18 @@ insert into `danh_muc_bai_viet` (`id_danh_muc`, `ten_danh_muc`, `mo_ta`) values
 (3, 'kiến thức', null);
 
 insert into `bai_viet` (`id_bai_viet`, `tieu_de`, `slug`, `tom_tat`,`hinh_anh`, `ngay_dang`, `ngay_cap_nhat`, `id_danh_muc`, `id_nguoi_tao`, `trang_thai`) values
-(1, 'câu chuyện thương hiệu', 'cau-chuyen-thuong-hieu', 'từ năm 2000 đến nay...', 'bai_viet1.jpg','2025-05-31 10:00:00', '2025-06-19 20:05:20', 1, 1, 'draft'),
-(2, 'xu hướng 2025', 'xu-huong-2025', 'thiết kế phát triển hiện đại...', 'bai_viet1.jpg','2025-06-01 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
-(3, 'bảo quản đá quý', 'bao-quan-da-quy', 'trang sức mang lại nhiều...', 'bai_viet1.jpg','2025-06-02 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
-(4, 'tối giản quay lại ', 'toi-gian-quay-lai', 'xu hướng tối giản được ưa chuộng...', 'bai_viet1.jpg', '2025-06-03 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
-(5, 'người sáng lập nói gì?', 'nguoi-sang-lap-noi-gi', 'chia sẻ từ người thành thương hiệu...', 'bai_viet1.jpg', '2025-08-04 10:00:00', '2025-06-19 20:05:20', 1, 1, 'draft'),
-(6, 'mix dây chuyền', 'mix-day-chuyen', 'phối hợp cùng sản phẩm cá tính...',  'bai_viet1.jpg','2025-06-05 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
-(7, 'phân biệt đá quý', 'phan-biet-da-quy', 'tránh mua nhầm đá giả...',  'bai_viet1.jpg','2025-06-06 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
-(8, 'lịch sử kim cương', 'lich-su-kim-cuong', 'từ truyền thuyết đến biểu tượng quyền lực...', 'bai_viet1.jpg', '2025-06-07 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
-(9, 'một ngày làm việc tại cửa hàng', 'mot-ngay-lam-viec-tai-cua-hang', 'cùng khám phá quá trình tạo sản phẩm...', 'bai_viet1.jpg', '2025-08-08 10:00:00', '2025-06-19 20:05:20', 1, 1, 'draft'),
-(10, 'top vòng tay hè này', 'top-vong-tay-he-nay', 'xu hướng vòng tay đáng chú ý hè này...', 'bai_viet1.jpg', '2025-06-09 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
-(11, 'bạc bị đen? cách xử lý!', 'bac-bi-den-cach-xu-ly', 'mẹo giữ trang sức luôn sáng bóng...', 'bai_viet1.jpg', '2025-06-10 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
-(12, 'thời trang trang sức cho nữ', 'thoi-trang-trang-suc-cho-nu', 'trang sức không chỉ dành cho nữ...',  'bai_viet1.jpg','2025-06-11 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft');
+(1, 'Câu chuyện thương hiệu', 'Cau-chuyen-thuong-hieu', 'từ năm 2000 đến nay...', 'https://unica.vn/media/imagesck/1603856669_cau-chuyen-thuong-hieu-2.jpg?v=1603856669','2025-05-31 10:00:00', '2025-06-19 20:05:20', 1, 1, 'draft'),
+(2, 'Xu hướng 2025', 'Xu-huong-2025', 'thiết kế phát triển hiện đại...', 'https://bizweb.dktcdn.net/100/302/551/articles/xu-huong-trang-suc-bac-2025-1.jpg?v=1738554950403','2025-06-01 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
+(3, 'Bảo quản đá quý', 'Bao-quan-da-quy', 'trang sức mang lại nhiều...', 'https://file.hstatic.net/200000619649/file/z4264155003580_59389e54d47105ed63785c9e80903494_21cbbb717f2f4771886df9e9261468c9.jpg','2025-06-02 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
+(4, 'Tối giản quay lại', 'Toi-gian-quay-lai', 'xu hướng tối giản được ưa chuộng...','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG4arbfzBT6NMFFdS_AlDmOhFBNq0igjVazg&s', '2025-06-03 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
+(5, 'Người sáng lập nói gì?', 'Nguoi-sang-lap-noi-gi', 'chia sẻ từ người thành thương hiệu...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC_9c2b5oVIWGOCuDwOZNsmRHh_kanrAxNLw&s', '2025-08-04 10:00:00', '2025-06-19 20:05:20', 1, 1, 'draft'),
+(6, 'Mix dây chuyền', 'Mix-day-chuyen', 'phối hợp cùng sản phẩm cá tính...',  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThfNVxFb9VAwFqHo8y1LCnEO8qo_RhGGuc1g&s','2025-06-05 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
+(7, 'Phân biệt đá quý', 'Phan-biet-da-quy', 'tránh mua nhầm đá giả...',  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsq9leAi8MpCnax4odAMTCaThGQN_3dNCGqA&s','2025-06-06 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
+(8, 'Lịch sử kim cương', 'Lich-su-kim-cuong', 'từ truyền thuyết đến biểu tượng quyền lực...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkWANjCabIwQ9uvmhDeAC6u-4KMYIKTvsXlg&s', '2025-06-07 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
+(9, 'Một ngày làm việc tại cửa hàng', 'Mot-ngay-lam-viec-tai-cua-hang', 'cùng khám phá quá trình tạo sản phẩm...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkxCQd7FreUuP2RPoIxVq1vIDDDfzIsRwqmw&s', '2025-08-08 10:00:00', '2025-06-19 20:05:20', 1, 1, 'draft'),
+(10, 'Top vòng tay hè này', 'Top-vong-tay-he-nay', 'xu hướng vòng tay đáng chú ý hè này...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA9D0kd9tFtyndKOOd0tWDFmQwSgYcYidd3w&s', '2025-06-09 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft'),
+(11, 'Bạc bị đen? Cách xử lý!', 'Bac-bi-den-cach-xu-ly', 'mẹo giữ trang sức luôn sáng bóng...', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLcxCrngBUFRBCP8GiN26l99XIBzMXKRMKGw&s', '2025-06-10 10:00:00', '2025-06-19 20:05:20', 3, 3, 'draft'),
+(12, 'Thời trang trang sức cho nữ', 'Thoi-trang-trang-suc-cho-nu', 'trang sức không chỉ dành cho nữ...',  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoERYh_9frIG_DagowLSdaiOwMB-mFjz0mww&s','2025-06-11 10:00:00', '2025-06-19 20:05:20', 2, 2, 'draft');
 
 insert into `chi_tiet_bai_viet` (`id_chi_tiet_bai_viet`, `id_bai_viet`, `noi_dung`, `hinh_anh`, `created_at`) values
 (1, 1, 'khởi nguồn từ đam mê:thương hiệu jewelry store ra đời từ tình yêu mãnh liệt với nghệ thuật chế tác trang sức. vào năm 2015, những người sáng lập đã bắt đầu hành trình tại một xưởng nhỏ, nơi họ biến những viên đá quý thô thành những kiệt tác lộng lẫy. hình ảnh minh họa: một xưởng thủ công với các nghệ nhân đang làm việc.\r\n\r\ncam kết chất lượng: chúng tôi luôn đặt chất lượng lên hàng đầu, chọn lọc từng viên ngọc trai và kim cương từ những nguồn cung cấp uy tín. mỗi sản phẩm đều được kiểm định kỹ lưỡng để đảm bảo độ bền và vẻ đẹp vượt thời gian. hình ảnh minh họa: một viên kim cương lấp lánh dưới ánh sáng.\r\n\r\nhành trình lan tỏa vẻ đẹp:từ những ngày đầu khiêm tốn, jewelry store đã vươn xa, mang vẻ đẹp trang sức đến tay hàng ngàn khách hàng trên toàn cầu. mỗi món đồ không chỉ là trang sức mà còn là biểu tượng của phong cách và cá tính. hình ảnh minh họa: một khách hàng đeo vòng cổ tại sự kiện sang trọng.\r\n\r\ntương lai rực rỡ:nhìn về phía trước, jewelry store cam kết tiếp tục đổi mới, kết hợp giữa truyền thống và xu hướng hiện đại để tạo ra những bộ sưu tập mới mẻ. hãy cùng chúng tôi viết tiếp câu chuyện này! hình ảnh minh họa: một thiết kế trang sức mới với phong cách hiện đại.', 'bai_viet1.jpg', '2025-06-17 20:11:40'),

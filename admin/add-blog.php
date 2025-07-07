@@ -32,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Thêm bài viết mới</title>
-    <link rel="stylesheet" href="manage-products.css">
-    <link rel="stylesheet" href="add-blog.css">
+      <link rel="stylesheet" href="/Jewelry%20Store/css/admin.css" />
 </head>
 <body>
 <main>

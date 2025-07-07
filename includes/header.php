@@ -103,7 +103,7 @@
                <div class="user-icon-container">
                    <i class="fa-solid fa-circle-user" id="cart-user-icon" onclick="toggleLoginForm()"></i>
                   
-                   <div class="form-container" id="login">
+                   <div class="form-container" id="login" >
                        <h2>Login</h2>
                        <form method="POST" action="process.php">
                            <label for="login-username">Tên tài khoản:</label>
@@ -114,7 +114,7 @@
 
                            <button type="button" onclick="kiemtrataikhoan()">Đăng nhập</button>
                            <div class="footer">
-                               Bạn chưa có tài khoản ? <a href="#">Tạo tài khoản</a>
+                               Mày chưa có tài khoản ? <a href="/Jewelry%20Store/pages/register.php">Tạo tài khoản</a>
                            </div>
                        </form>
                    </div>

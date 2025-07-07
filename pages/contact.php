@@ -2,7 +2,7 @@
 $successMessage = ""; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $conn = new mysqli("localhost", "root", "", "contact_jewelrystore");
+    $conn = new mysqli("localhost", "root", "", "jewelry_db");
     if ($conn->connect_error) {
         die("Kết nối thất bại: " . $conn->connect_error);
     }
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $successMessage = "Địa chỉ email không hợp lệ.";
     } else {
-      $sql = "INSERT INTO contact_messages (name, email, phone, subject, message)
+      $sql = "INSERT INTO lien_he (name, email, phone, subject, message)
             VALUES ('$name', '$email', '$phone', '$subject', '$message')";
     // Thực thi truy vấn
       if ($conn->query($sql) === TRUE) {
@@ -41,7 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/Jewelry%20Store/js/main.js"></script>
-  <script src="/Jewelry%20Store/js/process.js"></script>
 </head>
 <?php include "../pages/cart.php"; ?>
 <body>

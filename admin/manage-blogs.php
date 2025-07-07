@@ -33,8 +33,7 @@ function slugify($text) {
 <head>
     <meta charset="UTF-8">
     <title>Quản lý bài viết</title>
-    <link rel="stylesheet" href="manage-products.css">
-    <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="/Jewelry%20Store/css/admin.css" />
     <style>
         .add-btn-blog {
             display: inline-block;
