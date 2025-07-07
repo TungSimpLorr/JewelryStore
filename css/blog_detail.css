@@ -1,67 +1,81 @@
+/* Căn giữa toàn bộ nội dung blog */
 .blog-detail {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: "Segoe UI", sans-serif;
-    line-height: 1.6;
+    max-width: 700px;
+    margin: 40px auto 60px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 36px 32px 32px 32px;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .blog-title {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #222;
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #1a1a1a;
+    letter-spacing: 1px;
 }
 
 .blog-meta {
     text-align: center;
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 20px;
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 28px;
 }
 
 .blog-meta i {
-    margin-right: 5px;
-    color: #888;
+    margin-right: 6px;
+    color: #bfa14a;
+}
+
+.blog-content {
+    margin-bottom: 30px;
 }
 
 .blog-middle-image-wrapper {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
 }
 
 .blog-middle-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 90%;
+    max-height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(191,161,74,0.08);
+    object-fit: cover;
 }
 
 .blog-paragraphs p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #222;
     margin-bottom: 16px;
     text-align: justify;
-    font-size: 16px;
-    color: #333;
 }
 
 .back-button {
-    margin-top: 30px;
     text-align: center;
+    margin-top: 32px;
 }
 
 .back-button a {
     display: inline-block;
+    padding: 10px 28px;
+    background: linear-gradient(90deg, black  0%, #f7e7b3 100%);
+    color: #fff;
+    border-radius: 30px;
+    font-size: 1.08rem;
+    font-weight: 500;
     text-decoration: none;
-    color: #000;
-    border: 2px solid #000;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(191,161,74,0.10);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 .back-button a:hover {
-    background-color: #000;
-    color: #fff;
+    background: linear-gradient(90deg, #f7e7b3 0%, black 100%);
+    color: #1a1a1a;
+    box-shadow: 0 4px 16px rgba(191,161,74,0.18);
 }
-
