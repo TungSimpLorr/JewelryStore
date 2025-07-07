@@ -74,12 +74,10 @@ function slugify($text) {
                     <td><?php echo $row['id_bai_viet']; ?></td>
                     <td>
                         <?php
-
-$img_name = slugify($row['tieu_de']) . '.jpg';
-$img_path = '/JewelryStore-2/images/blogs/' . $img_name;
-// Kiểm tra file tồn tại, nếu không thì dùng ảnh mặc định
-$img_full_path = $_SERVER['DOCUMENT_ROOT'] . $img_path;
-if (!file_exists($img_full_path)) {
+$img = $row['hinh_anh'];
+if (!empty($img) && preg_match('/^https?:\/\//', $img)) {
+    $img_path = $img;
+} else {
     $img_path = '/JewelryStore-2/images/logo.png';
 }
 ?>
