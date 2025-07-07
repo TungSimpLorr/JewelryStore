@@ -41,8 +41,8 @@ $total_amount += $delivery_fee;
 try {
     
     
-    $sql_order = "INSERT INTO don_hang (id_nguoi_dung, tong_tien, trang_thai_don_hang, dia_chi_giao_hang, phuong_thuc_thanh_toan) 
-                   VALUES ('{$_SESSION['user_id']}', '$total_amount', 'Pending', '$address', '$payment_method')";
+    $sql_order = "INSERT INTO don_hang (id_nguoi_dung, ho_ten_khach_hang, tong_tien, trang_thai_don_hang, dia_chi_giao_hang, phuong_thuc_thanh_toan) 
+                   VALUES ('{$_SESSION['user_id']}', '$name', '$total_amount', 'Pending', '$address', '$payment_method')";
     
     if (!$conn->query($sql_order)) {
         throw new Exception("Lỗi khi tạo đơn hàng: " . $conn->error);
